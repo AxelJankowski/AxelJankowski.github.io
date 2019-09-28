@@ -2,7 +2,8 @@ body, html {
     height: 100%;
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
-
+    scroll-behavior: smooth;
+    position: relative;
 }
 
 *{
@@ -21,47 +22,84 @@ body, html {
 }
 .mcwrap .panel {
     position: fixed;
-    width: 20%;
+    width: 18%;
     height: 100%;
-    background-color: lightslategray;
-    padding: 30px 0;
+    background-color: #404040;
+    border-right: #262626 4px solid;
+    padding: 50px 0;
     text-align: center;
+    color: #f2f2f2;
+}
+.mcwrap .panel h1 {
+    font-size: 28px;
+    margin-top: 10px;
 }
 .mcwrap .panel h2 {
-    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.mcwrap .panel h3 {
+    width: 100%;
+    font-size: 10px;
+    color: #262626;
+    position: absolute;
+    bottom: 1%;
+    text-align: center;
 }
 .mcwrap .panel ul li {
     text-transform: uppercase;
+    font-size: 12px;
     font-weight: 600;
-    margin-bottom: 5px;
+    letter-spacing: 2px;
+    margin-top: 13px;
+}
+.mcwrap .panel ul li:hover {
+    transform: scale(1.1, 1.1);
+    transition-duration: 0.5s;
+}
+.mcwrap .panel a:link {
+    color: #f2f2f2;
+}
+.mcwrap .panel a:visited {
+    color: #f2f2f2;
+}
+.mcwrap .panel .icon {
+    font-size: 26px;
 }
 
 /* zawartość */
 .mcwrap .content {
     height: 100%;
     width: 100%;
-    margin-left: 20%;
+    margin-left: 18%;
 }
 
 /* start */
-.mcwrap .content .start {
+.mcwrap .content #start {
     background-image: url(img/background.jpg);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.mcwrap .content .start .text {
+.mcwrap .content #start .text {
     position: relative;
     top: 50%;
     left: 55%;
 }
-.mcwrap .content .start .text h1 {
+.mcwrap .content #start .text h1 {
     color: white;
 }
 
 /* about */
-.mcwrap .content .about {
+.mcwrap .content #me {
+    background-color: #f2f2f2;
+    height: 100%;
+}
+
+/* education */
+.mcwrap .content #education {
     background-color: white;
     height: 100%;
 }
