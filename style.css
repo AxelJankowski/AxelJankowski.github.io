@@ -4,6 +4,7 @@ body, html {
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
     position: relative;
+    background-color: #cccccc;
 }
 
 *{
@@ -12,6 +13,12 @@ body, html {
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+}
+
+/* responsywność, dodawaj do <img> */
+.responsive {
+    width: 100%;
+    height: auto;
 }
 
 /* panel nawigacyjny */
@@ -25,7 +32,7 @@ body, html {
     width: 18%;
     height: 100%;
     background-color: #404040;
-    border-right: #262626 4px solid;
+    border-right: 2px solid #262626;
     padding: 50px 0;
     text-align: center;
     color: #f2f2f2;
@@ -55,8 +62,8 @@ body, html {
     margin-top: 13px;
 }
 .mcwrap .panel ul li:hover {
-    transform: scale(1.1, 1.1);
-    transition-duration: 0.5s;
+    transform: scale(1.2, 1.2);
+    transition-duration: 0.4s;
 }
 .mcwrap .panel a:link {
     color: #f2f2f2;
@@ -73,12 +80,21 @@ body, html {
     height: 100%;
     width: 100%;
     margin-left: 18%;
+    font-size: 20px;
+}
+
+/* odstęp pomiędzy sekcjami */
+.mcwrap .content .divider {
+    height: 40%;
+    width: 100%;
+    background-color: #cccccc;
 }
 
 /* start */
 .mcwrap .content #start {
     background-image: url(img/background.jpg);
     height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -92,14 +108,104 @@ body, html {
     color: white;
 }
 
-/* about */
-.mcwrap .content #me {
+/* me */
+.mcwrap .content #meSection {
+    height: 100%;
+}
+.mcwrap .content #meSection #me {
     background-color: #f2f2f2;
     height: 100%;
+    width: 70%;
+    position: relative;
+    top: 4%;
+    left: 5%;
 }
 
 /* education */
-.mcwrap .content #education {
-    background-color: white;
+.mcwrap .content #educationSection {
     height: 100%;
+}
+.mcwrap .content #educationSection #education {
+    background-color: #f2f2f2;
+    height: 100%;
+    width: 70%;
+    position: relative;
+    top: 2%;
+    left: 20%;
+}
+
+/* skills */
+.mcwrap .content #skillsSection {
+    height: 100%;
+}
+.mcwrap .content #skillsSection #skills {
+    background-color: #f2f2f2;
+    height: 100%;
+    width: 70%;
+    position: relative;
+    left: 20%;
+}
+.container {
+    width: 100%;
+    background-color: #ddd;
+    margin-bottom: 15px;
+}
+.skills {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #f2f2f2;
+}  
+.html {width: 90%; background-color: orangered;}
+.css {width: 80%; background-color: #2196F3;}
+.js {width: 33%; background-color: orange;}
+.premiere {width: 75%; background-color: rebeccapurple;}
+
+/* experience */
+.mcwrap .content #experienceSection {
+    height: 100%;
+}
+.mcwrap .content #experienceSection #experience {
+    background-color: #f2f2f2;
+    height: 100%;
+    width: 70%;
+    position: relative;
+    top: 2%;
+    left: 10%;
+}
+
+/* contact */
+.mcwrap .content #contactSection {
+    height: 90%;
+}
+.mcwrap .content #contactSection #contact {
+    background-color: #f2f2f2;
+    height: 100%;
+    width: 70%;
+    position: relative;
+    top: 2%;
+    left: 15%;
+}
+
+/* widok dla telefonów */
+@media only screen and (max-width: 600px) {
+    .mcwrap {
+        display: inline;
+    }
+    .mcwrap .panel {
+        width: 100%;
+        position: relative;
+    }
+    .mcwrap .content {
+        width: 100%;
+        position: relative;
+        margin-left: 0;
+    }
+}
+
+/* widok dla tabletów */
+@media only screen and (max-width: 1200px) {
+    .mcwrap .content #educationSection #education {
+        font-size: 14px;
+    }
 }
