@@ -1,0 +1,215 @@
+$background-color: #cccccc;
+$section-color: #f2f2f2;
+
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+    position: relative;
+    background-color: $background-color;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* RESPONSYWNOŚĆ, DODAWAJ DO <img> */
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+/* PANEL NAWIGACYJNY */
+.mcwrap {
+    height: 100%;
+    display: flex;
+    position: relative;
+    .panel {
+        position: fixed;
+        width: 18%;
+        height: 100%;
+        background-color: #404040;
+        border-right: 2px solid #262626;
+        padding: 50px 0;
+        text-align: center;
+        color: $section-color;
+        h1 {
+            font-size: 28px;
+            margin-top: 10px;
+        }
+        h2 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        h3 {
+            width: 100%;
+            font-size: 10px;
+            font-weight: 300;
+            position: absolute;
+            bottom: 1%;
+            text-align: center;
+        }
+        ul {
+            li {
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 2px;
+                margin-top: 13px;
+                &:hover {
+                    transform: scale(1.2, 1.2);
+                    transition-duration: 0.4s;
+                }
+            }
+        }
+        a {
+            &:link {color: $section-color;}
+            &:visited {color: $section-color;}
+        }
+        .icon {font-size: 26px;}        
+    }
+
+    /* ZAWARTOŚĆ */
+    .content {
+        height: 100%;
+        width: 100%;
+        margin-left: 18%;
+        font-size: 20px;
+
+        /* ODSTĘP POMIĘDZY SEKCJAMI */
+        .divider {
+            height: 40%;
+            width: 100%;
+            background-color: $background-color;
+        }
+
+        /* START */
+        #start {
+            background-image: url(img/background.jpg);
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-attachment: fixed; TU JEST COŚ POKIĆKANE */
+            .text {
+                position: relative;
+                top: 50%;
+                left: 55%;
+                h1 {color: white;}
+            }
+        }
+
+        /* ME */
+        #meSection {
+            height: 100%;
+            #me {
+                background-color: $section-color;
+                height: 100%;
+                width: 70%;
+                position: relative;
+                top: 4%;
+                left: 5%;
+            }
+        }
+
+        /* EDUCATION */
+        #educationSection {
+            height: 100%;
+            #education {
+                background-color: $section-color;
+                height: 100%;
+                width: 70%;
+                position: relative;
+                top: 2%;
+                left: 20%;
+            }
+        }
+
+        /* SKILLS */
+        #skillsSection {
+            height: 100%;
+            #skills {
+                background-color: $section-color;
+                height: 100%;
+                width: 70%;
+                position: relative;
+                left: 20%;
+                .container {
+                    width: 100%;
+                    background-color: #ddd;
+                    margin-bottom: 15px;
+                    .skills {
+                        text-align: right;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        color: $section-color;
+                    }
+                    .html {width: 90%; background-color: orangered;}
+                    .css {width: 80%; background-color: #2196F3;}
+                    .js {width: 33%; background-color: orange;}
+                    .premiere {width: 75%; background-color: rebeccapurple;}
+                }
+            }
+        }
+
+        /* EXPERIENCE */
+        #experienceSection {
+            height: 100%;
+            #experience {
+                background-color: $section-color;
+                height: 100%;
+                width: 70%;
+                position: relative;
+                top: 2%;
+                left: 10%;
+            }
+        }
+
+        /* CONTACT */
+        #contactSection {
+            height: 90%;
+            #contact {
+                background-color: $section-color;
+                height: 100%;
+                width: 70%;
+                position: relative;
+                top: 2%;
+                left: 15%;
+            }
+        }
+    }
+}
+
+/* TELEFONY */
+@media only screen and (max-width: 600px) {
+    .mcwrap {
+        display: inline;
+        .panel {
+            width: 100%;
+            position: relative;
+        }
+        .content {
+            width: 100%;
+            position: relative;
+            margin-left: 0;
+        }
+    }
+}
+
+/* TABLETY */
+@media only screen and (max-width: 1200px) {
+    .mcwrap {
+        .content {
+            #educationSection {
+                #education {font-size: 14px;}
+            }
+        }
+    }
+}
