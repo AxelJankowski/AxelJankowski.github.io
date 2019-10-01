@@ -5,7 +5,8 @@ body, html {
   font-family: "Lato", sans-serif;
   scroll-behavior: smooth;
   position: relative;
-  background-color: #cccccc;
+  background-color: #333333;
+  color: #f2f2f2;
 }
 
 * {
@@ -31,13 +32,12 @@ body, html {
 }
 .mcwrap .panel {
   position: fixed;
-  width: 18%;
+  width: 15%;
   height: 100%;
-  background-color: #404040;
-  border-right: 2px solid #262626;
+  background-color: #1a1a1a;
   padding: 50px 0;
   text-align: center;
-  color: #f2f2f2;
+  color: #cccccc;
 }
 .mcwrap .panel h1 {
   font-size: 28px;
@@ -68,10 +68,14 @@ body, html {
   transition-duration: 0.4s;
 }
 .mcwrap .panel a:link {
-  color: #f2f2f2;
+  color: #cccccc;
 }
 .mcwrap .panel a:visited {
+  color: #cccccc;
+}
+.mcwrap .panel a:hover {
   color: #f2f2f2;
+  transition-duration: 0.4s;
 }
 .mcwrap .panel .icon {
   font-size: 26px;
@@ -79,8 +83,8 @@ body, html {
 .mcwrap .content {
   height: 100%;
   width: 100%;
-  margin-left: 18%;
-  font-size: 20px;
+  margin-left: 15%;
+  font-size: 18px;
   /* ODSTĘP POMIĘDZY SEKCJAMI */
   /* START */
   /* ME */
@@ -92,16 +96,17 @@ body, html {
 .mcwrap .content .divider {
   height: 40%;
   width: 100%;
-  background-color: #cccccc;
+  background-color: #333333;
 }
 .mcwrap .content #start {
   background-image: url(img/background.jpg);
   height: 100%;
   width: 100%;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
-  /* background-attachment: fixed; TU JEST COŚ POKIĆKANE */
+  background-attachment: fixed;
+  /* TU JEST COŚ POKIĆKANE */
 }
 .mcwrap .content #start .text {
   position: relative;
@@ -115,7 +120,7 @@ body, html {
   height: 100%;
 }
 .mcwrap .content #meSection #me {
-  background-color: #f2f2f2;
+  background-color: #1a1a1a;
   height: 100%;
   width: 70%;
   position: relative;
@@ -126,7 +131,8 @@ body, html {
   height: 100%;
 }
 .mcwrap .content #educationSection #education {
-  background-color: #f2f2f2;
+  background-color: #1a1a1a;
+  border-bottom: none;
   height: 100%;
   width: 70%;
   position: relative;
@@ -137,11 +143,15 @@ body, html {
   height: 100%;
 }
 .mcwrap .content #skillsSection #skills {
-  background-color: #f2f2f2;
+  background-color: #1a1a1a;
+  border-top: none;
   height: 100%;
   width: 70%;
   position: relative;
   left: 20%;
+}
+.mcwrap .content #skillsSection #skills h1 {
+  color: #00ffff;
 }
 .mcwrap .content #skillsSection #skills .container {
   width: 100%;
@@ -150,9 +160,9 @@ body, html {
 }
 .mcwrap .content #skillsSection #skills .container .skills {
   text-align: right;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #f2f2f2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #1a1a1a;
 }
 .mcwrap .content #skillsSection #skills .container .html {
   width: 90%;
@@ -174,23 +184,61 @@ body, html {
   height: 100%;
 }
 .mcwrap .content #experienceSection #experience {
-  background-color: #f2f2f2;
+  background-color: #1a1a1a;
   height: 100%;
   width: 70%;
   position: relative;
   top: 2%;
   left: 10%;
 }
+.mcwrap .content #experienceSection #experience h1 {
+  color: #00ffff;
+}
 .mcwrap .content #contactSection {
   height: 90%;
 }
 .mcwrap .content #contactSection #contact {
-  background-color: #f2f2f2;
+  background-color: #1a1a1a;
   height: 100%;
   width: 70%;
   position: relative;
   top: 2%;
   left: 15%;
+}
+.mcwrap .content #contactSection #contact .contactForm {
+  padding-top: 5%;
+  padding-left: 10%;
+}
+.mcwrap .content #contactSection #contact .contactForm .text h1 {
+  color: #00ffff;
+}
+.mcwrap .content #contactSection #contact .contactForm #contactForm input {
+  height: 40px;
+}
+.mcwrap .content #contactSection #contact .contactForm #contactForm .formControl {
+  width: 70%;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #333333;
+  color: #a6a6a6;
+}
+.mcwrap .content #contactSection #contact .contactForm #contactForm textarea {
+  height: 100px;
+  font-family: "Lato", sans-serif;
+}
+.mcwrap .content #contactSection #contact .contactForm #contactForm .submit {
+  width: 20%;
+  margin: 10px 0 10px 0;
+  color: #00ffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: 2px solid #333333;
+}
+.mcwrap .content #contactSection #contact .contactForm #contactForm .submit:hover {
+  cursor: pointer;
+  border: 2px solid #00ffff;
+  transition: 2s;
 }
 
 /* TELEFONY */

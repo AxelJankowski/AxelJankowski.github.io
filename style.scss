@@ -1,5 +1,8 @@
-$background-color: #cccccc;
-$section-color: #f2f2f2;
+$background-color: #333333;
+$section-color: rgb(26, 26, 26);
+$text-color: #f2f2f2;
+$panel-text-color: #cccccc;
+$accent: #00ffff;
 
 body, html {
     height: 100%;
@@ -8,6 +11,7 @@ body, html {
     scroll-behavior: smooth;
     position: relative;
     background-color: $background-color;
+    color: $text-color;
 }
 
 *{
@@ -31,13 +35,12 @@ body, html {
     position: relative;
     .panel {
         position: fixed;
-        width: 18%;
+        width: 15%;
         height: 100%;
-        background-color: #404040;
-        border-right: 2px solid #262626;
+        background-color: $section-color;
         padding: 50px 0;
         text-align: center;
-        color: $section-color;
+        color: $panel-text-color;
         h1 {
             font-size: 28px;
             margin-top: 10px;
@@ -69,8 +72,11 @@ body, html {
             }
         }
         a {
-            &:link {color: $section-color;}
-            &:visited {color: $section-color;}
+            &:link {color: $panel-text-color;}
+            &:visited {color: $panel-text-color;}
+            &:hover {
+                color: $text-color;
+                transition-duration: 0.4s;}
         }
         .icon {font-size: 26px;}        
     }
@@ -79,8 +85,8 @@ body, html {
     .content {
         height: 100%;
         width: 100%;
-        margin-left: 18%;
-        font-size: 20px;
+        margin-left: 15%;
+        font-size: 18px;
 
         /* ODSTĘP POMIĘDZY SEKCJAMI */
         .divider {
@@ -94,10 +100,10 @@ body, html {
             background-image: url(img/background.jpg);
             height: 100%;
             width: 100%;
-            background-position: center;
             background-repeat: no-repeat;
+            background-position: center center;
             background-size: cover;
-            /* background-attachment: fixed; TU JEST COŚ POKIĆKANE */
+            background-attachment: fixed; /* TU JEST COŚ POKIĆKANE */ 
             .text {
                 position: relative;
                 top: 50%;
@@ -124,6 +130,7 @@ body, html {
             height: 100%;
             #education {
                 background-color: $section-color;
+                border-bottom: none;
                 height: 100%;
                 width: 70%;
                 position: relative;
@@ -137,18 +144,20 @@ body, html {
             height: 100%;
             #skills {
                 background-color: $section-color;
+                border-top: none;
                 height: 100%;
                 width: 70%;
                 position: relative;
                 left: 20%;
+                h1 {color: $accent;}
                 .container {
                     width: 100%;
                     background-color: #ddd;
                     margin-bottom: 15px;
                     .skills {
                         text-align: right;
-                        padding-top: 10px;
-                        padding-bottom: 10px;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
                         color: $section-color;
                     }
                     .html {width: 90%; background-color: orangered;}
@@ -169,6 +178,7 @@ body, html {
                 position: relative;
                 top: 2%;
                 left: 10%;
+                h1 {color: $accent;}
             }
         }
 
@@ -182,6 +192,42 @@ body, html {
                 position: relative;
                 top: 2%;
                 left: 15%;
+                .contactForm {
+                    padding-top: 5%;
+                    padding-left: 10%;
+                    .text {
+                        h1 {color:$accent;}
+                        
+                    }
+                    #contactForm {
+                        input {height: 40px;}
+                        .formControl {
+                            width: 70%;
+                            background: transparent;
+                            outline: none;
+                            border: none;
+                            border-bottom: 2px solid $background-color;
+                            color: #a6a6a6;
+                        }
+                        textarea {
+                            height: 100px;
+                            font-family: 'Lato', sans-serif;
+                        }
+                        .submit {
+                            width: 20%;
+                            margin: 10px 0 10px 0;
+                            color: $accent;
+                            font-weight: bold;
+                            letter-spacing: 2px;
+                            border: 2px solid $background-color;
+                            &:hover {
+                                cursor: pointer;
+                                border: 2px solid $accent;
+                                transition: 2s;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
