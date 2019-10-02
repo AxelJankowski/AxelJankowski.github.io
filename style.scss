@@ -24,8 +24,25 @@ body, html {
 
 /* RESPONSYWNOŚĆ, DODAWAJ DO <img> */
 .responsive {
-    width: 100%;
+    max-width: 100%;
     height: auto;
+}
+
+.container {
+    width: 100%;
+    height: 90%;
+    position: relative;
+    top: 5%;
+}
+
+.back {
+    position: absolute;
+    background-color: $section-color;
+    height: 70%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 45%;
 }
 
 /* PANEL NAWIGACYJNY */
@@ -38,17 +55,21 @@ body, html {
         width: 15%;
         height: 100%;
         background-color: $section-color;
-        padding: 50px 0;
+        padding: 2% 0;
         text-align: center;
         color: $panel-text-color;
+        .main {
+            width: 55%;
+            border-radius: 50%;
+        }
         h1 {
             font-size: 28px;
-            margin-top: 10px;
+            margin-top: 5%;
         }
         h2 {
             font-size: 15px;
             font-weight: 600;
-            margin-bottom: 30px;
+            margin-bottom: 10%;
         }
         h3 {
             width: 100%;
@@ -76,7 +97,8 @@ body, html {
             &:visited {color: $panel-text-color;}
             &:hover {
                 color: $text-color;
-                transition-duration: 0.4s;}
+                transition-duration: 0.4s;
+            }
         }
         .icon {font-size: 26px;}        
     }
@@ -86,7 +108,7 @@ body, html {
         height: 100%;
         width: 100%;
         margin-left: 15%;
-        font-size: 18px;
+        font-size: 16px;
 
         /* ODSTĘP POMIĘDZY SEKCJAMI */
         .divider {
@@ -101,11 +123,10 @@ body, html {
             height: 100%;
             width: 100%;
             background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            background-attachment: fixed; /* TU JEST COŚ POKIĆKANE */ 
+            background-position: center;
+            background-size: cover; /* TU JEST COŚ POKIĆKANE */ 
             .text {
-                position: relative;
+                position: absolute;
                 top: 50%;
                 left: 55%;
                 h1 {color: white;}
@@ -115,55 +136,92 @@ body, html {
         /* ME */
         #meSection {
             height: 100%;
-            #me {
-                background-color: $section-color;
-                height: 100%;
-                width: 70%;
-                position: relative;
-                top: 4%;
-                left: 5%;
+            width: 100%;
+            .me {
+                .text {
+                    position: absolute;
+                    left: 10%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 30%;
+                    height: auto;
+                    vertical-align: middle;
+                    h1 {color: $accent;}
+                }
+                .graphics {
+                    position: absolute;
+                    right: 5%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 50%;
+                    height: auto;
+                }
             }
         }
 
         /* EDUCATION */
         #educationSection {
             height: 100%;
-            #education {
-                background-color: $section-color;
-                border-bottom: none;
-                height: 100%;
-                width: 70%;
-                position: relative;
-                top: 2%;
-                left: 20%;
+            width: 100%;
+            .education {
+                .graphics {
+                    position: absolute;
+                    left: 10%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 30%;
+                    height: auto;
+                }
+                .text {
+                    position: absolute;
+                    right: 20%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 30%;
+                    height: auto;
+                    vertical-align: middle;
+                    h1 {color: $accent;}
+                }
             }
         }
 
         /* SKILLS */
         #skillsSection {
             height: 100%;
-            #skills {
-                background-color: $section-color;
-                border-top: none;
-                height: 100%;
-                width: 70%;
-                position: relative;
-                left: 20%;
-                h1 {color: $accent;}
-                .container {
-                    width: 100%;
-                    background-color: #ddd;
-                    margin-bottom: 15px;
-                    .skills {
-                        text-align: right;
-                        padding-top: 5px;
-                        padding-bottom: 5px;
-                        color: $section-color;
+            width: 100%;
+            .skills {
+                .graphics {
+                    position: absolute;
+                    right: 20%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 25%;
+                    height: auto;
+                }
+                .text {
+                    position: absolute;
+                    left: 10%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 40%;
+                    height: auto;
+                    vertical-align: middle;
+                    h1 {color: $accent;}
+                    .container {
+                        width: 100%;
+                        background-color: #ddd;
+                        margin-bottom: 2%;
+                        .skills {
+                            text-align: right;
+                            padding-top: 1%;
+                            padding-bottom: 1%;
+                            color: $section-color;
+                        }
+                        .html {width: 90%; background-color: orangered;}
+                        .css {width: 80%; background-color: #2196F3;}
+                        .js {width: 33%; background-color: orange;}
+                        .premiere {width: 75%; background-color: rebeccapurple;}
                     }
-                    .html {width: 90%; background-color: orangered;}
-                    .css {width: 80%; background-color: #2196F3;}
-                    .js {width: 33%; background-color: orange;}
-                    .premiere {width: 75%; background-color: rebeccapurple;}
                 }
             }
         }
@@ -197,7 +255,6 @@ body, html {
                     padding-left: 10%;
                     .text {
                         h1 {color:$accent;}
-                        
                     }
                     #contactForm {
                         input {height: 40px;}
@@ -215,6 +272,7 @@ body, html {
                         }
                         .submit {
                             width: 20%;
+                            min-width: 80px;
                             margin: 10px 0 10px 0;
                             color: $accent;
                             font-weight: bold;
@@ -240,21 +298,86 @@ body, html {
         .panel {
             width: 100%;
             position: relative;
+            .main {
+                width: 45%;
+            }
+            h1 {margin-top: 2%;}
+            h2 {margin-bottom: 4%;}
+            h3 {position: fixed;}
         }
         .content {
             width: 100%;
             position: relative;
             margin-left: 0;
+            .divider {height: 10%;}
         }
     }
 }
 
 /* TABLETY */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 920px) {
+    .container {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+    .back {
+        position: static;
+        float: left;
+        transform: none;
+    }
+    .text {
+        width: 80%;
+        position: static;
+        float: left;
+        margin: 5% 10%;
+        transform: none;
+    }
+    .graphics {
+        width: 80%;
+        position: static;
+        float: left;
+        margin-left: 10%;
+        transform: none;
+    }
     .mcwrap {
         .content {
+            #meSection {
+                .me {
+                    .text {
+                        width: 80%;
+                        position: static;
+                        float: left;
+                        margin: 5% 10%;
+                        transform: none;
+                    }
+                    .graphics {
+                        width: 80%;
+                        position: static;
+                        float: left;
+                        margin-left: 10%;
+                        transform: none;
+                    }
+                }
+            }
             #educationSection {
-                #education {font-size: 14px;}
+                .education {
+                    .text {
+                        width: 80%;
+                        position: static;
+                        float: left;
+                        margin-left: 10%;
+                        transform: none;
+                    }
+                    .graphics {
+                        width: 50%;
+                        position: static;
+                        float: left;
+                        margin: 5% 0 0 10%;
+                        transform: none;
+                    }
+                }
             }
         }
     }
