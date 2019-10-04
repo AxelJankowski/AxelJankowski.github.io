@@ -1,5 +1,6 @@
 @charset "UTF-8";
 body, html {
+  z-index: -1;
   height: 100%;
   overflow-x: hidden;
   font-family: "Lato", sans-serif;
@@ -75,8 +76,14 @@ body, html {
   width: 15%;
   height: 100%;
   background-color: #1a1a1a;
-  padding: 2% 0;
+  padding: 3% 0;
   text-align: center;
+  color: #cccccc;
+}
+.mcwrap .panel a:link {
+  color: #cccccc;
+}
+.mcwrap .panel a:visited {
   color: #cccccc;
 }
 .mcwrap .panel .main {
@@ -100,26 +107,28 @@ body, html {
   bottom: 1%;
   text-align: center;
 }
-.mcwrap .panel ul li {
+.mcwrap .panel ul li div {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 2px;
-  margin-top: 13px;
+  letter-spacing: 3px;
+  margin-top: 14px;
+  width: auto;
+  display: inline-block;
 }
-.mcwrap .panel ul li:hover {
+.mcwrap .panel ul li div:hover {
   transform: scale(1.2, 1.2);
   transition-duration: 0.4s;
 }
-.mcwrap .panel a:link {
-  color: #cccccc;
-}
-.mcwrap .panel a:visited {
-  color: #cccccc;
-}
-.mcwrap .panel a:hover {
-  color: #f2f2f2;
+.mcwrap .panel ul li div a:hover {
+  color: #f2f2f2 !important;
   transition-duration: 0.4s;
+}
+.mcwrap .panel ul li div a:link {
+  color: #cccccc;
+}
+.mcwrap .panel ul li div a:visited {
+  color: #cccccc;
 }
 .mcwrap .panel .icon {
   font-size: 26px;
@@ -149,7 +158,7 @@ body, html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* TU JEST COŚ POKIĆKANE */
+  background-attachment: fixed;
 }
 .mcwrap .content #start .text {
   position: absolute;
@@ -225,6 +234,20 @@ body, html {
   right: 20%;
   top: 50%;
   width: 30%;
+  height: 50%;
+}
+.mcwrap .content #experienceSection .experience .graphics div {
+  width: 100%;
+  height: 75%;
+}
+.mcwrap .content #experienceSection .experience .graphics div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.mcwrap .content #experienceSection .experience .graphics div img:hover {
+  -webkit-filter: brightness(110%);
+  transition-duration: 0.4s;
 }
 .mcwrap .content #contactSection .contact .text {
   left: 10%;
@@ -251,6 +274,7 @@ body, html {
 .mcwrap .content #contactSection .contact .text .contactForm #contactForm textarea {
   height: 100px;
   font-family: "Lato", sans-serif;
+  margin-top: 3%;
 }
 .mcwrap .content #contactSection .contact .text .contactForm #contactForm .submit {
   width: 20%;
@@ -270,6 +294,31 @@ body, html {
   right: 20%;
   top: 50%;
   width: 30%;
+}
+
+/* PRZYCISK GO TOP */
+#goTop {
+  display: none;
+  /* COŚ TU JEST POKIĆKANE */
+  position: fixed;
+  opacity: 0.5;
+  bottom: 2%;
+  right: 30px;
+  z-index: 99;
+  border: 2px solid #1a1a1a;
+  outline: none;
+  background-color: #333333;
+  color: #00ffff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+}
+#goTop:hover {
+  opacity: 1;
+  border: 2px solid #00ffff;
+  background-color: #1a1a1a;
+  transition-duration: 2s;
 }
 
 /* TELEFONY */
@@ -313,6 +362,12 @@ body, html {
 
   .back {
     z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
   }
 
   .taco {
@@ -321,6 +376,9 @@ body, html {
     transform: none;
   }
 
+  .mcwrap .panel h3 {
+    position: absolute;
+  }
   .mcwrap .content .divider {
     height: 40%;
     width: 100%;
@@ -335,8 +393,14 @@ body, html {
     margin-left: 10%;
   }
   .mcwrap .content #educationSection .education .graphics {
-    width: 50%;
-    margin: 5% 0 0 10%;
+    height: 30%;
+    width: 80%;
+    margin: 5% 0 3% 10%;
+  }
+  .mcwrap .content #educationSection .education .graphics img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
   .mcwrap .content #educationSection .education .text {
     width: 80%;
@@ -347,7 +411,29 @@ body, html {
     margin-left: 10%;
   }
   .mcwrap .content #skillsSection .skills .graphics {
-    width: 50%;
+    height: 30%;
+    width: 80%;
+    margin: 5% 0 0 10%;
+  }
+  .mcwrap .content #skillsSection .skills .graphics img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .mcwrap .content #experienceSection .experience .text {
+    width: 80%;
+    margin: 5% 0 0 10%;
+  }
+  .mcwrap .content #experienceSection .experience .graphics {
+    width: 80%;
+    margin: 5% 0 0 10%;
+  }
+  .mcwrap .content #contactSection .contact .text {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .mcwrap .content #contactSection .contact .graphics {
+    width: 80%;
     margin: 5% 0 0 10%;
   }
 }

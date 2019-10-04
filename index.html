@@ -2,35 +2,43 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="author" content="Axel Jankowski"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/fontello.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
         <title>Axel Jankowski | Portfolio</title>
+        <meta name="keywords" content="Axel, Jankowski, portfolio, resume, website, web, developer, designer, frontend, pizza"/>
+        <meta name="description" content="My name is Axel, this in my website."/>
+
+        <meta property="og:image" content="img/background.jpg"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:description" content="My name is Axel, this in my website."/>
     </head>
 
     <body data-spy="scroll">
         
         <div class="mcwrap">
             <div class="panel">
-                <img src="img/tea.jpg" class="main">
+                <img src="img/tea.jpg" alt="Photo" class="main">
                 <h1><a href="#start">Axel <span style="color:#00b3b3;">Jankowski</span></a></h1>
                 <h2><a style="color:#00b3b3;">web</a> developer</h2>
                 <ul>
-                    <li><a href="#meSection">me</a></li>
-                    <li><a href="#educationSection">education</a></li>
-                    <li><a href="#skillsSection">skills</a></li>
-                    <li><a href="#experienceSection">experience</a></li>
-                    <li><a href="#contactSection">contact</a></li>
+                    <li><div><a href="#meSection">me</a></div></li>
+                    <li><div><a href="#educationSection">education</a></div></li>
+                    <li><div><a href="#skillsSection">skills</a></div></li>
+                    <li><div><a href="#experienceSection">experience</a></div></li>
+                    <li><div><a href="#contactSection">contact</a></div></li>
                 </ul>
                 <br/>
                 <a href="https://www.facebook.com/palmerleland" target="_blank"><span class="icon icon-facebook-circled"></span></a>
                 <a href="https://www.linkedin.com/in/axel-jankowski-941ab5183/" target="_blank"><span class="icon icon-linkedin-circled"></span></a>
                 <a href="https://github.com/AxelJankowski" target="_blank"><span class="icon icon-github-circled"></span></a>
-                <h3>Online Portofolio © 2019 by Axel Jankowski</h3>
+                <h3>Online Portofolio © 2019 by <a title="axeljankowskii@gmail.com">Axel Jankowski</a></h3>
             </div>
 
             <div class="content">
@@ -56,7 +64,7 @@
                             Music also.
                         </div>
                         <div class="graphics taco">
-                            <img src="img/beach.jpg" class="responsive">
+                            <img src="img/beach.jpg" alt="Beach" class="responsive">
                         </div>
                     </div>
                 </div>
@@ -67,14 +75,14 @@
                     <div class="education tortilla">
                         <div class="back"></div>
                         <div class="graphics taco">
-                            <img src="img/student.jpg" class="responsive">
+                            <img src="img/student.jpg" alt="Student" class="responsive">
                         </div>
                         <div class="text taco">
                             <h1>Education</h1>
                             <br/>
                             I'm a Bachelor of Science in <span style="color:#00ffff;">Information Technology</span>, specialised in computer graphics and multimedia.
                             <br/><br/>
-                            <img src="img/gala.jpg" class="responsive">
+                            <img src="img/gala.jpg" alt="Gala" class="responsive">
                         </div>
                     </div>
                 </div>
@@ -107,7 +115,7 @@
                             + SASS, Git, responsive web design, Microsoft Office and basics of Wordpress, PHP and PostgreSQL
                         </div>
                         <div class="graphics taco">
-                            <img src="img/cook.jpg" class="responsive">
+                            <img src="img/cook.jpg" alt="Cook" class="responsive">
                         </div>
                     </div>
                 </div>
@@ -123,6 +131,8 @@
                         </div>
                         <div class="graphics taco">
                             <h1>My works:</h1>
+                            <br/>
+                            <div><a href="https://poddabie.info" target="_blank"><img src="img/poddabie.jpg" alt="Poddabie.info" class="responsive"></a></div>
                         </div>
                     </div>
                 </div>
@@ -151,9 +161,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="divider" style="height:10%;"></div>
             </div>
+            <button onclick="topFunction()" id="goTop" title="Go to top">TOP</button>
         </div>
+
+        <script> /* COŚ TU JEST POKIĆKANE */
+            mybutton = document.getElementById("goTop");
+
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
 
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

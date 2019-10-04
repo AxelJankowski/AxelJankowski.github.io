@@ -5,6 +5,7 @@ $panel-text-color: #cccccc;
 $accent: #00ffff;
 
 body, html {
+    z-index: -1;
     height: 100%;
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
@@ -78,9 +79,13 @@ body, html {
         width: 15%;
         height: 100%;
         background-color: $section-color;
-        padding: 2% 0;
+        padding: 3% 0;
         text-align: center;
         color: $panel-text-color;
+        a {
+            &:link {color: $panel-text-color;}
+            &:visited {color: $panel-text-color;}
+        }
         .main {
             width: 55%;
             border-radius: 50%;
@@ -104,25 +109,31 @@ body, html {
         }
         ul {
             li {
-                text-transform: uppercase;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: 2px;
-                margin-top: 13px;
-                &:hover {
-                    transform: scale(1.2, 1.2);
-                    transition-duration: 0.4s;
+                div {
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    font-weight: 600;
+                    letter-spacing: 3px;
+                    margin-top: 14px;
+                    width: auto;
+                    display: inline-block;
+                    &:hover {
+                        transform: scale(1.2, 1.2);
+                        transition-duration: 0.4s;
+                    }
+                    a {
+                        &:hover {
+                            color: $text-color !important;
+                            transition-duration: 0.4s;
+                        }
+                        &:link {color: $panel-text-color;}
+                        &:visited {color: $panel-text-color;}
+                    }
                 }
+                
             }
         }
-        a {
-            &:link {color: $panel-text-color;}
-            &:visited {color: $panel-text-color;}
-            &:hover {
-                color: $text-color;
-                transition-duration: 0.4s;
-            }
-        }
+        
         .icon {font-size: 26px;}        
     }
 
@@ -147,7 +158,8 @@ body, html {
             width: 100%;
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover; /* TU JEST COŚ POKIĆKANE */ 
+            background-size: cover; 
+            background-attachment: fixed;
             .text {
                 position: absolute;
                 top: 50%;
@@ -231,6 +243,20 @@ body, html {
                     right: 20%;
                     top: 50%;
                     width: 30%;
+                    height: 50%;
+                    div {
+                        width: 100%;
+                        height: 75%;                            
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            &:hover {
+                                -webkit-filter: brightness(110%);
+                                transition-duration: 0.4s;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -260,6 +286,7 @@ body, html {
                             textarea {
                                 height: 100px;
                                 font-family: 'Lato', sans-serif;
+                                margin-top: 3%;
                             }
                             .submit {
                                 width: 20%;
@@ -285,6 +312,30 @@ body, html {
                 }
             }
         }
+    }
+}
+
+/* PRZYCISK GO TOP */
+#goTop {
+    display: none; /* COŚ TU JEST POKIĆKANE */
+    position: fixed;
+    opacity: 0.5;
+    bottom: 2%;
+    right: 30px;
+    z-index: 99;
+    border: 2px solid $section-color;
+    outline: none;
+    background-color: $background-color;
+    color: $accent;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    &:hover {
+        opacity: 1;
+        border: 2px solid $accent;
+        background-color: $section-color;
+        transition-duration: 2s;
     }
 }
 
@@ -321,6 +372,12 @@ body, html {
     }
     .back {
         z-index: -1;
+        position: absolute;
+        height: 100%;
+        width: 90%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
     }
     .taco {
         position: static;
@@ -328,6 +385,9 @@ body, html {
         transform: none;
     }
     .mcwrap {
+        .panel {
+            h3 {position: absolute;}
+        }
         .content {
             .divider {
                 height: 40%;
@@ -349,8 +409,14 @@ body, html {
             #educationSection {
                 .education {
                     .graphics {
-                        width: 50%;
-                        margin: 5% 0 0 10%;
+                        height: 30%;
+                        width: 80%;
+                        margin: 5% 0 3% 10%;
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
                     }
                     .text {
                         width: 80%;
@@ -365,7 +431,37 @@ body, html {
                         margin-left: 10%;
                     }
                     .graphics {
-                        width: 50%;
+                        height: 30%;
+                        width: 80%;
+                        margin: 5% 0 0 10%;
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+            #experienceSection {
+                .experience {
+                    .text {
+                        width: 80%;
+                        margin: 5% 0 0 10%;
+                    }
+                    .graphics {
+                        width: 80%;
+                        margin: 5% 0 0 10%;
+                    }
+                }
+            }
+            #contactSection {
+                .contact {
+                    .text {
+                        width: 80%;
+                        margin-left: 10%;
+                    }
+                    .graphics {
+                        width: 80%;
                         margin: 5% 0 0 10%;
                     }
                 }
