@@ -28,11 +28,34 @@ body, html {
     height: auto;
 }
 
-.container {
+.section {
+    width: 100%;
+    height: 100%;
+}
+
+.tortilla {
     width: 100%;
     height: 90%;
     position: relative;
     top: 5%;
+}
+
+.taco {
+    position: absolute;
+    transform: translateY(-50%);
+    height: auto;
+    vertical-align: middle;
+    h1 {color: $accent;}
+    a {
+        &:link {
+            color: $accent;
+            text-decoration: underline;
+        }
+        &:visited {
+            color: $accent;
+            text-decoration: underline;
+        }
+    }
 }
 
 .back {
@@ -135,78 +158,48 @@ body, html {
 
         /* ME */
         #meSection {
-            height: 100%;
-            width: 100%;
             .me {
                 .text {
-                    position: absolute;
                     left: 10%;
                     top: 50%;
-                    transform: translateY(-50%);
                     width: 30%;
-                    height: auto;
-                    vertical-align: middle;
-                    h1 {color: $accent;}
                 }
                 .graphics {
-                    position: absolute;
                     right: 5%;
                     top: 50%;
-                    transform: translateY(-50%);
                     width: 50%;
-                    height: auto;
                 }
             }
         }
 
         /* EDUCATION */
         #educationSection {
-            height: 100%;
-            width: 100%;
             .education {
                 .graphics {
-                    position: absolute;
                     left: 10%;
                     top: 50%;
-                    transform: translateY(-50%);
                     width: 30%;
-                    height: auto;
                 }
                 .text {
-                    position: absolute;
                     right: 20%;
                     top: 50%;
-                    transform: translateY(-50%);
                     width: 30%;
-                    height: auto;
-                    vertical-align: middle;
-                    h1 {color: $accent;}
                 }
             }
         }
 
         /* SKILLS */
         #skillsSection {
-            height: 100%;
-            width: 100%;
             .skills {
                 .graphics {
-                    position: absolute;
                     right: 20%;
                     top: 50%;
-                    transform: translateY(-50%);
                     width: 25%;
-                    height: auto;
                 }
                 .text {
-                    position: absolute;
                     left: 10%;
                     top: 50%;
-                    transform: translateY(-50%);
                     width: 40%;
-                    height: auto;
-                    vertical-align: middle;
-                    h1 {color: $accent;}
                     .container {
                         width: 100%;
                         background-color: #ddd;
@@ -228,63 +221,67 @@ body, html {
 
         /* EXPERIENCE */
         #experienceSection {
-            height: 100%;
-            #experience {
-                background-color: $section-color;
-                height: 100%;
-                width: 70%;
-                position: relative;
-                top: 2%;
-                left: 10%;
-                h1 {color: $accent;}
+            .experience {
+                .text {
+                    left: 10%;
+                    top: 50%;
+                    width: 30%;
+                }
+                .graphics {
+                    right: 20%;
+                    top: 50%;
+                    width: 30%;
+                }
             }
         }
 
         /* CONTACT */
         #contactSection {
-            height: 90%;
-            #contact {
-                background-color: $section-color;
-                height: 100%;
-                width: 70%;
-                position: relative;
-                top: 2%;
-                left: 15%;
-                .contactForm {
-                    padding-top: 5%;
-                    padding-left: 10%;
-                    .text {
-                        h1 {color:$accent;}
-                    }
-                    #contactForm {
-                        input {height: 40px;}
-                        .formControl {
-                            width: 70%;
-                            background: transparent;
-                            outline: none;
-                            border: none;
-                            border-bottom: 2px solid $background-color;
-                            color: #a6a6a6;
+            .contact {
+                .text {
+                    left: 10%;
+                    top: 50%;
+                    width: 35%;
+                    .contactForm {
+                        padding-top: 5%;
+                        .text {
+                            h1 {color:$accent;}
                         }
-                        textarea {
-                            height: 100px;
-                            font-family: 'Lato', sans-serif;
-                        }
-                        .submit {
-                            width: 20%;
-                            min-width: 80px;
-                            margin: 10px 0 10px 0;
-                            color: $accent;
-                            font-weight: bold;
-                            letter-spacing: 2px;
-                            border: 2px solid $background-color;
-                            &:hover {
-                                cursor: pointer;
-                                border: 2px solid $accent;
-                                transition: 2s;
+                        #contactForm {
+                            input {height: 40px;}
+                            .formControl {
+                                width: 100%;
+                                background: transparent;
+                                outline: none;
+                                border: none;
+                                border-bottom: 2px solid $background-color;
+                                color: #a6a6a6;
+                            }
+                            textarea {
+                                height: 100px;
+                                font-family: 'Lato', sans-serif;
+                            }
+                            .submit {
+                                width: 20%;
+                                min-width: 80px;
+                                margin: 10px 0 10px 0;
+                                color: $accent;
+                                font-weight: bold;
+                                letter-spacing: 2px;
+                                border: 2px solid $background-color;
+                                &:hover {
+                                    cursor: pointer;
+                                    border: 2px solid $accent;
+                                    transition: 2s;
+                                }
                             }
                         }
                     }
+                }
+                .graphics {
+                    right: 20%;
+                    top: 50%;
+                    width: 30%;
                 }
             }
         }
@@ -323,59 +320,53 @@ body, html {
         top: 0;
     }
     .back {
-        position: static;
-        float: left;
-        transform: none;
+        z-index: -1;
     }
-    .text {
-        width: 80%;
+    .taco {
         position: static;
         float: left;
-        margin: 5% 10%;
-        transform: none;
-    }
-    .graphics {
-        width: 80%;
-        position: static;
-        float: left;
-        margin-left: 10%;
         transform: none;
     }
     .mcwrap {
         .content {
+            .divider {
+                height: 40%;
+                width: 100%;
+                background-color: $background-color;
+            }
             #meSection {
                 .me {
                     .text {
                         width: 80%;
-                        position: static;
-                        float: left;
                         margin: 5% 10%;
-                        transform: none;
                     }
                     .graphics {
                         width: 80%;
-                        position: static;
-                        float: left;
                         margin-left: 10%;
-                        transform: none;
                     }
                 }
             }
             #educationSection {
                 .education {
+                    .graphics {
+                        width: 50%;
+                        margin: 5% 0 0 10%;
+                    }
                     .text {
                         width: 80%;
-                        position: static;
-                        float: left;
                         margin-left: 10%;
-                        transform: none;
+                    }
+                }
+            }
+            #skillsSection {
+                .skills {
+                    .text {
+                        width: 80%;
+                        margin-left: 10%;
                     }
                     .graphics {
                         width: 50%;
-                        position: static;
-                        float: left;
                         margin: 5% 0 0 10%;
-                        transform: none;
                     }
                 }
             }

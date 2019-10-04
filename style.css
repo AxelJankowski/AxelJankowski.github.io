@@ -23,11 +23,34 @@ body, html {
   height: auto;
 }
 
-.container {
+.section {
+  width: 100%;
+  height: 100%;
+}
+
+.tortilla {
   width: 100%;
   height: 90%;
   position: relative;
   top: 5%;
+}
+
+.taco {
+  position: absolute;
+  transform: translateY(-50%);
+  height: auto;
+  vertical-align: middle;
+}
+.taco h1 {
+  color: #00ffff;
+}
+.taco a:link {
+  color: #00ffff;
+  text-decoration: underline;
+}
+.taco a:visited {
+  color: #00ffff;
+  text-decoration: underline;
 }
 
 .back {
@@ -136,77 +159,35 @@ body, html {
 .mcwrap .content #start .text h1 {
   color: white;
 }
-.mcwrap .content #meSection {
-  height: 100%;
-  width: 100%;
-}
 .mcwrap .content #meSection .me .text {
-  position: absolute;
   left: 10%;
   top: 50%;
-  transform: translateY(-50%);
   width: 30%;
-  height: auto;
-  vertical-align: middle;
-}
-.mcwrap .content #meSection .me .text h1 {
-  color: #00ffff;
 }
 .mcwrap .content #meSection .me .graphics {
-  position: absolute;
   right: 5%;
   top: 50%;
-  transform: translateY(-50%);
   width: 50%;
-  height: auto;
-}
-.mcwrap .content #educationSection {
-  height: 100%;
-  width: 100%;
 }
 .mcwrap .content #educationSection .education .graphics {
-  position: absolute;
   left: 10%;
   top: 50%;
-  transform: translateY(-50%);
   width: 30%;
-  height: auto;
 }
 .mcwrap .content #educationSection .education .text {
-  position: absolute;
   right: 20%;
   top: 50%;
-  transform: translateY(-50%);
   width: 30%;
-  height: auto;
-  vertical-align: middle;
-}
-.mcwrap .content #educationSection .education .text h1 {
-  color: #00ffff;
-}
-.mcwrap .content #skillsSection {
-  height: 100%;
-  width: 100%;
 }
 .mcwrap .content #skillsSection .skills .graphics {
-  position: absolute;
   right: 20%;
   top: 50%;
-  transform: translateY(-50%);
   width: 25%;
-  height: auto;
 }
 .mcwrap .content #skillsSection .skills .text {
-  position: absolute;
   left: 10%;
   top: 50%;
-  transform: translateY(-50%);
   width: 40%;
-  height: auto;
-  vertical-align: middle;
-}
-.mcwrap .content #skillsSection .skills .text h1 {
-  color: #00ffff;
 }
 .mcwrap .content #skillsSection .skills .text .container {
   width: 100%;
@@ -235,54 +216,43 @@ body, html {
   width: 75%;
   background-color: rebeccapurple;
 }
-.mcwrap .content #experienceSection {
-  height: 100%;
-}
-.mcwrap .content #experienceSection #experience {
-  background-color: #1a1a1a;
-  height: 100%;
-  width: 70%;
-  position: relative;
-  top: 2%;
+.mcwrap .content #experienceSection .experience .text {
   left: 10%;
+  top: 50%;
+  width: 30%;
 }
-.mcwrap .content #experienceSection #experience h1 {
-  color: #00ffff;
+.mcwrap .content #experienceSection .experience .graphics {
+  right: 20%;
+  top: 50%;
+  width: 30%;
 }
-.mcwrap .content #contactSection {
-  height: 90%;
+.mcwrap .content #contactSection .contact .text {
+  left: 10%;
+  top: 50%;
+  width: 35%;
 }
-.mcwrap .content #contactSection #contact {
-  background-color: #1a1a1a;
-  height: 100%;
-  width: 70%;
-  position: relative;
-  top: 2%;
-  left: 15%;
-}
-.mcwrap .content #contactSection #contact .contactForm {
+.mcwrap .content #contactSection .contact .text .contactForm {
   padding-top: 5%;
-  padding-left: 10%;
 }
-.mcwrap .content #contactSection #contact .contactForm .text h1 {
+.mcwrap .content #contactSection .contact .text .contactForm .text h1 {
   color: #00ffff;
 }
-.mcwrap .content #contactSection #contact .contactForm #contactForm input {
+.mcwrap .content #contactSection .contact .text .contactForm #contactForm input {
   height: 40px;
 }
-.mcwrap .content #contactSection #contact .contactForm #contactForm .formControl {
-  width: 70%;
+.mcwrap .content #contactSection .contact .text .contactForm #contactForm .formControl {
+  width: 100%;
   background: transparent;
   outline: none;
   border: none;
   border-bottom: 2px solid #333333;
   color: #a6a6a6;
 }
-.mcwrap .content #contactSection #contact .contactForm #contactForm textarea {
+.mcwrap .content #contactSection .contact .text .contactForm #contactForm textarea {
   height: 100px;
   font-family: "Lato", sans-serif;
 }
-.mcwrap .content #contactSection #contact .contactForm #contactForm .submit {
+.mcwrap .content #contactSection .contact .text .contactForm #contactForm .submit {
   width: 20%;
   min-width: 80px;
   margin: 10px 0 10px 0;
@@ -291,10 +261,15 @@ body, html {
   letter-spacing: 2px;
   border: 2px solid #333333;
 }
-.mcwrap .content #contactSection #contact .contactForm #contactForm .submit:hover {
+.mcwrap .content #contactSection .contact .text .contactForm #contactForm .submit:hover {
   cursor: pointer;
   border: 2px solid #00ffff;
   transition: 2s;
+}
+.mcwrap .content #contactSection .contact .graphics {
+  right: 20%;
+  top: 50%;
+  width: 30%;
 }
 
 /* TELEFONY */
@@ -337,54 +312,43 @@ body, html {
   }
 
   .back {
+    z-index: -1;
+  }
+
+  .taco {
     position: static;
     float: left;
     transform: none;
   }
 
-  .text {
-    width: 80%;
-    position: static;
-    float: left;
-    margin: 5% 10%;
-    transform: none;
+  .mcwrap .content .divider {
+    height: 40%;
+    width: 100%;
+    background-color: #333333;
   }
-
-  .graphics {
-    width: 80%;
-    position: static;
-    float: left;
-    margin-left: 10%;
-    transform: none;
-  }
-
   .mcwrap .content #meSection .me .text {
     width: 80%;
-    position: static;
-    float: left;
     margin: 5% 10%;
-    transform: none;
   }
   .mcwrap .content #meSection .me .graphics {
     width: 80%;
-    position: static;
-    float: left;
     margin-left: 10%;
-    transform: none;
-  }
-  .mcwrap .content #educationSection .education .text {
-    width: 80%;
-    position: static;
-    float: left;
-    margin-left: 10%;
-    transform: none;
   }
   .mcwrap .content #educationSection .education .graphics {
     width: 50%;
-    position: static;
-    float: left;
     margin: 5% 0 0 10%;
-    transform: none;
+  }
+  .mcwrap .content #educationSection .education .text {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .mcwrap .content #skillsSection .skills .text {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .mcwrap .content #skillsSection .skills .graphics {
+    width: 50%;
+    margin: 5% 0 0 10%;
   }
 }
 

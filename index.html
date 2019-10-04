@@ -42,10 +42,10 @@
                 <div class="divider"></div>
 
                 <!-- START SEKCJI ME -->
-                <div id="meSection">
-                    <div class="container me">
+                <div id="meSection" class="section">
+                    <div class="me tortilla">
                         <div class="back"></div>
-                        <div class="text">
+                        <div class="text taco">
                             <h1>Hello, I'm Axel.</h1>
                             <br/>
                             I like to drink orange juice and eat pizza.<br/>
@@ -55,7 +55,7 @@
                             Guild Wars 2 is cool.<br/>
                             Music also.
                         </div>
-                        <div class="graphics">
+                        <div class="graphics taco">
                             <img src="img/beach.jpg" class="responsive">
                         </div>
                     </div>
@@ -63,13 +63,13 @@
                 <div class="divider"></div>
 
                 <!-- START SEKCJI EDUCATION -->
-                <div id="educationSection">
-                    <div class="container education">
+                <div id="educationSection" class="section">
+                    <div class="education tortilla">
                         <div class="back"></div>
-                        <div class="graphics">
+                        <div class="graphics taco">
                             <img src="img/student.jpg" class="responsive">
                         </div>
-                        <div class="text">
+                        <div class="text taco">
                             <h1>Education</h1>
                             <br/>
                             I'm a Bachelor of Science in <span style="color:#00ffff;">Information Technology</span>, specialised in computer graphics and multimedia.
@@ -81,10 +81,10 @@
                 <div class="divider"></div>
 
                 <!-- START SEKCJI SKILLS -->
-                <div id="skillsSection">
-                    <div class="container skills">
+                <div id="skillsSection" class="section">
+                    <div class="skills tortilla">
                         <div class="back"></div>
-                        <div class="text">
+                        <div class="text taco">
                             <h1>Skills</h1>
                             <br/>
                             HTML5
@@ -106,47 +106,22 @@
                             <br/>
                             + SASS, Git, responsive web design, Microsoft Office and basics of Wordpress, PHP and PostgreSQL
                         </div>
-                        <div class="graphics">
+                        <div class="graphics taco">
                             <img src="img/cook.jpg" class="responsive">
                         </div>
-
-                        <!-- <div style="height:50%; width:65%; position:absolute; top:10%; left:26%;">
-                            <h1>Skills</h1>
-                            <br/>
-                            <p>HTML5</p>
-                            <div class="container">
-                                <div class="skills html">90%</div>
-                            </div>
-                            <p>CSS3</p>
-                            <div class="container">
-                                <div class="skills css">80%</div>
-                            </div>
-                            <p>JavaScript</p>
-                            <div class="container">
-                                <div class="skills js">33%</div>
-                            </div>
-                            <p>Adobe Premiere</p>
-                            <div class="container">
-                                <div class="skills premiere">75%</div>
-                            </div>
-                            <br/>
-                            <p>+ SASS, Git, responsive web design, Microsoft Office and basics of Wordpress, PHP and PostgreSQL</p>
-                            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                        </div>
-                        <div style="width:33%; position:absolute; top:5%; left:-17%;"><img src="img/cook.jpg" class="responsive"> -->
-
-
                     </div>
                 </div>
                 <div class="divider"></div>
 
                 <!-- START SEKCJI EXPERIENCE -->
-                <div id="experienceSection">
-                    <div id="experience">
-                        <div style="height:50%; width:50%; position:absolute; top:10%; left:10%;">
-                            I have worked in a many different fields (all my work experience can be found on my LinkedIn),<br/>
-                            but now I am greatly interested in expanding my web development skills.
-                            <br/><br/>
+                <div id="experienceSection" class="section">
+                    <div class="experience tortilla">
+                        <div class="back"></div>
+                        <div class="text taco">
+                                I have worked in a many different fields (all my work experience can be found on my <a href="https://www.linkedin.com/in/axel-jankowski-941ab5183/" target="_blank">LinkedIn</a>),<br/>
+                                but now I am greatly interested in expanding my web development skills.
+                        </div>
+                        <div class="graphics taco">
                             <h1>My works:</h1>
                         </div>
                     </div>
@@ -154,25 +129,25 @@
                 <div class="divider"></div>
 
                 <!-- START SEKCJI CONTACT -->
-                <div id="contactSection">
-                    <div id="contact">
-                        <div class="contactForm">
-                            <div class="text">
+                <div id="contactSection" class="section">
+                    <div class="contact tortilla">
+                        <div class="back"></div>
+                        <div class="text taco">
+                            <div class="contactForm">
                                 <h1>Contact me</h1>
                                 Leave a message here!
+                                <form id="contactForm" method="POST" action="contact-form.php">
+                                    <input name="name" type="text" class="formControl" placeholder="Name*" required><br/>
+                                    <input name="email" type="text" class="formControl" placeholder="Email*" required><br/>
+                                    <input name="subject" type="text" class="formControl" placeholder="Subject"><br/>
+                                    <textarea name="message" class="formControl" placeholder="Message*" required></textarea><br/>
+                                    <input type="submit" class="formControl submit" value="SEND">
+                                </form>
                             </div>
-                            <form id="contactForm" method="POST" action="contact-form.php">
-                                <input name="name" type="text" class="formControl" placeholder="Name*" required><br/>
-                                <input name="email" type="text" class="formControl" placeholder="Email*" required><br/>
-                                <input name="subject" type="text" class="formControl" placeholder="Subject"><br/>
-                                <textarea name="message" class="formControl" placeholder="Message*" required></textarea><br/>
-                                <input type="submit" class="formControl submit" value="SEND">
-                            </form>
-                            <br/>
-                            <div class="text">
-                                or write to<br/>
-                                axeljankowskii@gmail.com
-                            </div>
+                        </div>
+                        <div class="graphics taco">
+                            or write to<br/>
+                            axeljankowskii@gmail.com
                         </div>
                     </div>
                 </div>
