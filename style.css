@@ -71,7 +71,7 @@ body, html {
   position: relative;
   /* ZAWARTOŚĆ */
 }
-.mcwrap .panel {
+.mcwrap #panel {
   position: fixed;
   width: 15%;
   height: 100%;
@@ -80,26 +80,26 @@ body, html {
   text-align: center;
   color: #cccccc;
 }
-.mcwrap .panel a:link {
+.mcwrap #panel a:link {
   color: #cccccc;
 }
-.mcwrap .panel a:visited {
+.mcwrap #panel a:visited {
   color: #cccccc;
 }
-.mcwrap .panel .main {
+.mcwrap #panel .main {
   width: 55%;
   border-radius: 50%;
 }
-.mcwrap .panel h1 {
+.mcwrap #panel h1 {
   font-size: 28px;
   margin-top: 5%;
 }
-.mcwrap .panel h2 {
+.mcwrap #panel h2 {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10%;
 }
-.mcwrap .panel h3 {
+.mcwrap #panel h3 {
   width: 100%;
   font-size: 10px;
   font-weight: 300;
@@ -107,7 +107,7 @@ body, html {
   bottom: 1%;
   text-align: center;
 }
-.mcwrap .panel ul li div {
+.mcwrap #panel ul li div {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 600;
@@ -116,24 +116,24 @@ body, html {
   width: auto;
   display: inline-block;
 }
-.mcwrap .panel ul li div:hover {
+.mcwrap #panel ul li div:hover {
   transform: scale(1.2, 1.2);
   transition-duration: 0.4s;
 }
-.mcwrap .panel ul li div a:hover {
+.mcwrap #panel ul li div a:hover {
   color: #f2f2f2 !important;
   transition-duration: 0.4s;
 }
-.mcwrap .panel ul li div a:link {
+.mcwrap #panel ul li div a:link {
   color: #cccccc;
 }
-.mcwrap .panel ul li div a:visited {
+.mcwrap #panel ul li div a:visited {
   color: #cccccc;
 }
-.mcwrap .panel .icon {
+.mcwrap #panel .icon {
   font-size: 26px;
 }
-.mcwrap .content {
+.mcwrap #content {
   height: 100%;
   width: 100%;
   margin-left: 15%;
@@ -146,12 +146,12 @@ body, html {
   /* EXPERIENCE */
   /* CONTACT */
 }
-.mcwrap .content .divider {
+.mcwrap #content .divider {
   height: 40%;
   width: 100%;
   background-color: #333333;
 }
-.mcwrap .content #start {
+.mcwrap #content #start {
   background-image: url(img/background.jpg);
   height: 100%;
   width: 100%;
@@ -160,110 +160,110 @@ body, html {
   background-size: cover;
   background-attachment: fixed;
 }
-.mcwrap .content #start .text {
+.mcwrap #content #start .text {
   position: absolute;
   top: 50%;
   left: 55%;
 }
-.mcwrap .content #start .text h1 {
+.mcwrap #content #start .text h1 {
   color: white;
 }
-.mcwrap .content #meSection .me .text {
+.mcwrap #content #meSection .me .text {
   left: 10%;
   top: 50%;
   width: 30%;
 }
-.mcwrap .content #meSection .me .graphics {
+.mcwrap #content #meSection .me .graphics {
   right: 5%;
   top: 50%;
   width: 50%;
 }
-.mcwrap .content #educationSection .education .graphics {
+.mcwrap #content #educationSection .education .graphics {
   left: 10%;
   top: 50%;
   width: 30%;
 }
-.mcwrap .content #educationSection .education .text {
+.mcwrap #content #educationSection .education .text {
   right: 20%;
   top: 50%;
   width: 30%;
 }
-.mcwrap .content #skillsSection .skills .graphics {
+.mcwrap #content #skillsSection .skills .graphics {
   right: 20%;
   top: 50%;
   width: 25%;
 }
-.mcwrap .content #skillsSection .skills .text {
+.mcwrap #content #skillsSection .skills .text {
   left: 10%;
   top: 50%;
   width: 40%;
 }
-.mcwrap .content #skillsSection .skills .text .container {
+.mcwrap #content #skillsSection .skills .text .container {
   width: 100%;
   background-color: #ddd;
   margin-bottom: 2%;
 }
-.mcwrap .content #skillsSection .skills .text .container .skills {
+.mcwrap #content #skillsSection .skills .text .container .skills {
   text-align: right;
   padding-top: 1%;
   padding-bottom: 1%;
   color: #1a1a1a;
 }
-.mcwrap .content #skillsSection .skills .text .container .html {
+.mcwrap #content #skillsSection .skills .text .container .html {
   width: 90%;
   background-color: orangered;
 }
-.mcwrap .content #skillsSection .skills .text .container .css {
+.mcwrap #content #skillsSection .skills .text .container .css {
   width: 80%;
   background-color: #2196F3;
 }
-.mcwrap .content #skillsSection .skills .text .container .js {
+.mcwrap #content #skillsSection .skills .text .container .js {
   width: 50%;
   background-color: orange;
 }
-.mcwrap .content #skillsSection .skills .text .container .premiere {
+.mcwrap #content #skillsSection .skills .text .container .premiere {
   width: 75%;
   background-color: rebeccapurple;
 }
-.mcwrap .content #experienceSection .experience .text {
+.mcwrap #content #experienceSection .experience .text {
   left: 10%;
   top: 50%;
   width: 30%;
 }
-.mcwrap .content #experienceSection .experience .graphics {
+.mcwrap #content #experienceSection .experience .graphics {
   right: 20%;
   top: 50%;
   width: 30%;
   height: 50%;
 }
-.mcwrap .content #experienceSection .experience .graphics div {
+.mcwrap #content #experienceSection .experience .graphics div {
   width: 100%;
   height: 75%;
 }
-.mcwrap .content #experienceSection .experience .graphics div img {
+.mcwrap #content #experienceSection .experience .graphics div img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.mcwrap .content #experienceSection .experience .graphics div img:hover {
+.mcwrap #content #experienceSection .experience .graphics div img:hover {
   -webkit-filter: brightness(110%);
   transition-duration: 0.4s;
 }
-.mcwrap .content #contactSection .contact .text {
+.mcwrap #content #contactSection .contact .text {
   left: 10%;
   top: 50%;
   width: 35%;
 }
-.mcwrap .content #contactSection .contact .text .contactForm {
+.mcwrap #content #contactSection .contact .text .contactForm {
   padding-top: 5%;
 }
-.mcwrap .content #contactSection .contact .text .contactForm .text h1 {
+.mcwrap #content #contactSection .contact .text .contactForm .text h1 {
   color: #00ffff;
 }
-.mcwrap .content #contactSection .contact .text .contactForm #contactForm input {
+.mcwrap #content #contactSection .contact .text .contactForm #contactForm input {
   height: 40px;
 }
-.mcwrap .content #contactSection .contact .text .contactForm #contactForm .formControl {
+.mcwrap #content #contactSection .contact .text .contactForm #contactForm .formControl {
   width: 100%;
   background: transparent;
   outline: none;
@@ -271,12 +271,12 @@ body, html {
   border-bottom: 2px solid #333333;
   color: #a6a6a6;
 }
-.mcwrap .content #contactSection .contact .text .contactForm #contactForm textarea {
+.mcwrap #content #contactSection .contact .text .contactForm #contactForm textarea {
   height: 100px;
   font-family: "Lato", sans-serif;
   margin-top: 3%;
 }
-.mcwrap .content #contactSection .contact .text .contactForm #contactForm .submit {
+.mcwrap #content #contactSection .contact .text .contactForm #contactForm .submit {
   width: 20%;
   min-width: 80px;
   margin: 10px 0 10px 0;
@@ -285,40 +285,15 @@ body, html {
   letter-spacing: 2px;
   border: 2px solid #333333;
 }
-.mcwrap .content #contactSection .contact .text .contactForm #contactForm .submit:hover {
+.mcwrap #content #contactSection .contact .text .contactForm #contactForm .submit:hover {
   cursor: pointer;
   border: 2px solid #00ffff;
   transition: 2s;
 }
-.mcwrap .content #contactSection .contact .graphics {
+.mcwrap #content #contactSection .contact .graphics {
   right: 20%;
   top: 50%;
   width: 30%;
-}
-
-/* PRZYCISK GO TOP */
-#goTop {
-  display: none;
-  /* COŚ TU JEST POKIĆKANE */
-  position: fixed;
-  opacity: 0.5;
-  bottom: 2%;
-  right: 30px;
-  z-index: 99;
-  border: 2px solid #1a1a1a;
-  outline: none;
-  background-color: #333333;
-  color: #00ffff;
-  cursor: pointer;
-  font-weight: bold;
-  padding: 10px 20px;
-  letter-spacing: 2px;
-}
-#goTop:hover {
-  opacity: 1;
-  border: 2px solid #00ffff;
-  background-color: #1a1a1a;
-  transition-duration: 2s;
 }
 
 /* TELEFONY */
@@ -380,7 +355,7 @@ body, html {
     position: absolute;
   }
   .mcwrap .content .divider {
-    height: 40%;
+    height: 30%;
     width: 100%;
     background-color: #333333;
   }
