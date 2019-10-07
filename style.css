@@ -301,28 +301,28 @@ body, html {
   .mcwrap {
     display: inline;
   }
-  .mcwrap .panel {
+  .mcwrap #panel {
     width: 100%;
     position: relative;
   }
-  .mcwrap .panel .main {
+  .mcwrap #panel .main {
     width: 45%;
   }
-  .mcwrap .panel h1 {
+  .mcwrap #panel h1 {
     margin-top: 2%;
   }
-  .mcwrap .panel h2 {
+  .mcwrap #panel h2 {
     margin-bottom: 4%;
   }
-  .mcwrap .panel h3 {
+  .mcwrap #panel h3 {
     position: fixed;
   }
-  .mcwrap .content {
+  .mcwrap #content {
     width: 100%;
     position: relative;
     margin-left: 0;
   }
-  .mcwrap .content .divider {
+  .mcwrap #content .divider {
     height: 10%;
   }
 }
@@ -351,63 +351,63 @@ body, html {
     transform: none;
   }
 
-  .mcwrap .panel h3 {
+  .mcwrap #panel h3 {
     position: absolute;
   }
-  .mcwrap .content .divider {
-    height: 30%;
+  .mcwrap #content .divider {
+    height: 40%;
     width: 100%;
     background-color: #333333;
   }
-  .mcwrap .content #meSection .me .text {
+  .mcwrap #content #meSection .me .text {
     width: 80%;
     margin: 5% 10%;
   }
-  .mcwrap .content #meSection .me .graphics {
+  .mcwrap #content #meSection .me .graphics {
     width: 80%;
     margin-left: 10%;
   }
-  .mcwrap .content #educationSection .education .graphics {
+  .mcwrap #content #educationSection .education .graphics {
     height: 30%;
     width: 80%;
     margin: 5% 0 3% 10%;
   }
-  .mcwrap .content #educationSection .education .graphics img {
+  .mcwrap #content #educationSection .education .graphics img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
-  .mcwrap .content #educationSection .education .text {
+  .mcwrap #content #educationSection .education .text {
     width: 80%;
     margin-left: 10%;
   }
-  .mcwrap .content #skillsSection .skills .text {
+  .mcwrap #content #skillsSection .skills .text {
     width: 80%;
     margin-left: 10%;
   }
-  .mcwrap .content #skillsSection .skills .graphics {
+  .mcwrap #content #skillsSection .skills .graphics {
     height: 30%;
     width: 80%;
     margin: 5% 0 0 10%;
   }
-  .mcwrap .content #skillsSection .skills .graphics img {
+  .mcwrap #content #skillsSection .skills .graphics img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
-  .mcwrap .content #experienceSection .experience .text {
+  .mcwrap #content #experienceSection .experience .text {
     width: 80%;
     margin: 5% 0 0 10%;
   }
-  .mcwrap .content #experienceSection .experience .graphics {
+  .mcwrap #content #experienceSection .experience .graphics {
     width: 80%;
     margin: 5% 0 0 10%;
   }
-  .mcwrap .content #contactSection .contact .text {
+  .mcwrap #content #contactSection .contact .text {
     width: 80%;
     margin-left: 10%;
   }
-  .mcwrap .content #contactSection .contact .graphics {
+  .mcwrap #content #contactSection .contact .graphics {
     width: 80%;
     margin-left: 10%;
   }

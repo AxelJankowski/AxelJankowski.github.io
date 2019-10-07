@@ -319,7 +319,7 @@ body, html {
 @media only screen and (max-width: 600px) {
     .mcwrap {
         display: inline;
-        .panel {
+        #panel {
             width: 100%;
             position: relative;
             .main {
@@ -329,7 +329,7 @@ body, html {
             h2 {margin-bottom: 4%;}
             h3 {position: fixed;}
         }
-        .content {
+        #content {
             width: 100%;
             position: relative;
             margin-left: 0;
@@ -361,12 +361,12 @@ body, html {
         transform: none;
     }
     .mcwrap {
-        .panel {
+        #panel {
             h3 {position: absolute;}
         }
-        .content {
+        #content {
             .divider {
-                height: 30%;
+                height: 40%;
                 width: 100%;
                 background-color: $background-color;
             }
