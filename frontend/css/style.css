@@ -131,7 +131,7 @@ body, html {
   color: #cccccc;
 }
 .mcwrap #panel .icon {
-  font-size: 26px;
+  font-size: 30px;
 }
 .mcwrap #content {
   height: 100%;
@@ -152,7 +152,7 @@ body, html {
   background-color: #333333;
 }
 .mcwrap #content #start {
-  background-image: url(img/build.jpg);
+  background-image: url(../img/build.jpg);
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
@@ -247,6 +247,7 @@ body, html {
 }
 .mcwrap #content #experienceSection .experience .graphics div img:hover {
   -webkit-filter: brightness(110%);
+  filter: brightness(110%);
   transition-duration: 0.4s;
 }
 .mcwrap #content #contactSection .contact .text {
