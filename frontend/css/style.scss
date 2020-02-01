@@ -69,6 +69,10 @@ body, html {
     left: 45%;
 }
 
+h1 {
+    font-size: 40px;
+}
+
 /* PANEL NAWIGACYJNY */
 .mcwrap {
     height: 100%;
@@ -212,20 +216,10 @@ body, html {
                     left: 10%;
                     top: 50%;
                     width: 40%;
-                    .container {
-                        width: 100%;
-                        background-color: #ddd;
-                        margin-bottom: 2%;
-                        .skills {
-                            text-align: right;
-                            padding-top: 1%;
-                            padding-bottom: 1%;
-                            color: $section-color;
-                        }
-                        .html {width: 90%; background-color: orangered;}
-                        .css {width: 80%; background-color: #2196F3;}
-                        .js {width: 50%; background-color: orange;}
-                        .premiere {width: 75%; background-color: rebeccapurple;}
+                    .tech {
+                        width: 100px;
+                        margin-right: 5%;
+                        vertical-align: middle;
                     }
                 }
             }

@@ -64,6 +64,10 @@ body, html {
   left: 45%;
 }
 
+h1 {
+  font-size: 40px;
+}
+
 /* PANEL NAWIGACYJNY */
 .mcwrap {
   height: 100%;
@@ -198,32 +202,10 @@ body, html {
   top: 50%;
   width: 40%;
 }
-.mcwrap #content #skillsSection .skills .text .container {
-  width: 100%;
-  background-color: #ddd;
-  margin-bottom: 2%;
-}
-.mcwrap #content #skillsSection .skills .text .container .skills {
-  text-align: right;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  color: #1a1a1a;
-}
-.mcwrap #content #skillsSection .skills .text .container .html {
-  width: 90%;
-  background-color: orangered;
-}
-.mcwrap #content #skillsSection .skills .text .container .css {
-  width: 80%;
-  background-color: #2196F3;
-}
-.mcwrap #content #skillsSection .skills .text .container .js {
-  width: 50%;
-  background-color: orange;
-}
-.mcwrap #content #skillsSection .skills .text .container .premiere {
-  width: 75%;
-  background-color: rebeccapurple;
+.mcwrap #content #skillsSection .skills .text .tech {
+  width: 100px;
+  margin-right: 5%;
+  vertical-align: middle;
 }
 .mcwrap #content #experienceSection .experience .text {
   left: 10%;
