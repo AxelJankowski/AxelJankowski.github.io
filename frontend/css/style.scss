@@ -73,11 +73,12 @@ h1 {
     font-size: 40px;
 }
 
-/* PANEL NAWIGACYJNY */
+/* WRAPPER */
 .mcwrap {
     height: 100%;
     display: flex;
     position: relative;
+    /* PANEL NAWIGACYJNY */
     #panel {
         position: fixed;
         width: 15%;
@@ -86,53 +87,47 @@ h1 {
         padding: 3% 0;
         text-align: center;
         color: $panel-text-color;
-        .panel__link {
-            &:link {color: $panel-text-color;}
-            &:visited {color: $panel-text-color;}
-        }
-        .panel__link--brighten {
-            &:hover {color: $text-color !important; transition-duration: 0.4s;}
-        }
-        .main {
-            width: 55%;
+        .panel__photo {
+            width: 60%;
             border-radius: 50%;
         }
-        h1 {
+        .panel__name {
             font-size: 28px;
             margin-top: 5%;
         }
-        h2 {
+        .panel__title {
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 10%;
         }
-        h3 {
+        .panel__nav {
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-top: 14px;
+            width: auto;
+            display: inline-block;
+            &:hover {
+                transform: scale(1.2, 1.2);
+                transition-duration: 0.4s;
+            }
+        }
+        .panel__footer {
             width: 100%;
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 300;
             position: absolute;
             bottom: 1%;
             text-align: center;
         }
-        ul {
-            li {
-                div {
-                    text-transform: uppercase;
-                    font-size: 12px;
-                    font-weight: 600;
-                    letter-spacing: 3px;
-                    margin-top: 14px;
-                    width: auto;
-                    display: inline-block;
-                    &:hover {
-                        transform: scale(1.2, 1.2);
-                        transition-duration: 0.4s;
-                    }
-                }
-                
-            }
+        .panel--link {
+            &:link {color: $panel-text-color;}
+            &:visited {color: $panel-text-color;}
         }
-        
+        .panel--link-brighten {
+            &:hover {color: $text-color !important; transition-duration: 0.4s;}
+        }
         .icon {font-size: 30px;}        
     }
 
@@ -352,7 +347,7 @@ h1 {
     }
     .mcwrap {
         #panel {
-            h3 {position: absolute;}
+            .panel__footer {position: absolute;}
         }
         #content {
             .divider {
