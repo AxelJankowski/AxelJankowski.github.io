@@ -86,9 +86,12 @@ h1 {
         padding: 3% 0;
         text-align: center;
         color: $panel-text-color;
-        a {
+        .panel__link {
             &:link {color: $panel-text-color;}
             &:visited {color: $panel-text-color;}
+        }
+        .panel__link--brighten {
+            &:hover {color: $text-color !important; transition-duration: 0.4s;}
         }
         .main {
             width: 55%;
@@ -124,14 +127,6 @@ h1 {
                     &:hover {
                         transform: scale(1.2, 1.2);
                         transition-duration: 0.4s;
-                    }
-                    a {
-                        &:hover {
-                            color: $text-color !important;
-                            transition-duration: 0.4s;
-                        }
-                        &:link {color: $panel-text-color;}
-                        &:visited {color: $panel-text-color;}
                     }
                 }
                 
