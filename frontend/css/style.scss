@@ -15,6 +15,10 @@ body, html {
     color: $text-color;
 }
 
+.active {
+    color: black !important;
+}
+
 *{
     margin: 0;
     padding: 0;
