@@ -156,8 +156,6 @@ h1 {
 }
 .mcwrap .content .start {
   background-image: url(../img/build.jpg);
-  height: 100%;
-  width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

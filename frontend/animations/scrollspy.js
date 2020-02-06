@@ -1,8 +1,8 @@
 /* work in progress */
 
-'use strict';
-
 (function() {
+    'use strict';
+
     let section = document.querySelectorAll(".section");
     let sections = {};
     let i = 0;
@@ -16,8 +16,10 @@
 
         for(i in sections) {
             if(sections[i] <= scrollPosition) {
-                document.querySelector('.active').setAttribute('class', 'panel__nav panel--link panel-link--brighten');
-                document.querySelector('a[href*=' + i + ']').setAttribute('class', 'panel__nav panel--link panel-link--brighten active');
+                document.querySelector('.active').setAttribute('class', 'panel__nav panel--link panel--link-brighten');
+                document.querySelector('a[href*=' + i + ']').setAttribute('class', 'panel__nav panel--link panel--link-brighten active');
+
+                console.log('tutej okej');
             }
         }
     };
