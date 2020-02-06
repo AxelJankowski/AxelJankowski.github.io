@@ -82,8 +82,8 @@ h1 {
     height: 100%;
     display: flex;
     position: relative;
-    /* PANEL NAWIGACYJNY */
-    #panel {
+    /* PANEL NAWIGACYJNY (LEWY BLOK) */
+    .panel {
         position: fixed;
         width: 15%;
         height: 100%;
@@ -91,20 +91,20 @@ h1 {
         padding: 3% 0;
         text-align: center;
         color: $panel-text-color;
-        .panel__photo {
+        &__photo {
             width: 60%;
             border-radius: 50%;
         }
-        .panel__name {
+        &__name {
             font-size: 28px;
             margin-top: 5%;
         }
-        .panel__title {
+        &__title {
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 10%;
         }
-        .panel__nav {
+        &__nav {
             text-transform: uppercase;
             font-size: 12px;
             font-weight: 600;
@@ -117,7 +117,8 @@ h1 {
                 transition-duration: 0.4s;
             }
         }
-        .panel__footer {
+        &__icon {font-size: 30px;}  
+        &__footer {
             width: 100%;
             font-size: 12px;
             font-weight: 300;
@@ -125,32 +126,30 @@ h1 {
             bottom: 1%;
             text-align: center;
         }
-        .panel--link {
+        &--link {
             &:link {color: $panel-text-color;}
             &:visited {color: $panel-text-color;}
         }
-        .panel--link-brighten {
+        &--link-brighten {
             &:hover {color: $text-color !important; transition-duration: 0.4s;}
-        }
-        .icon {font-size: 30px;}        
+        }     
     }
 
-    /* ZAWARTOŚĆ */
-    #content {
+    /* ZAWARTOŚĆ (PRAWY BLOK) */
+    .content {
         height: 100%;
         width: 100%;
         margin-left: 15%;
         font-size: 16px;
-
         /* ODSTĘP POMIĘDZY SEKCJAMI */
-        .divider {
+        &__divider {
             height: 40%;
             width: 100%;
             background-color: $background-color;
         }
 
         /* START */
-        #start {
+        .start {
             background-image: url(../img/build.jpg);
             height: 100%;
             width: 100%;
@@ -167,7 +166,7 @@ h1 {
         }
 
         /* ME */
-        #meSection {
+        .meSection {
             .me {
                 .text {
                     left: 10%;
@@ -183,7 +182,7 @@ h1 {
         }
 
         /* EDUCATION */
-        #educationSection {
+        .educationSection {
             .education {
                 .graphics {
                     left: 10%;
@@ -199,7 +198,7 @@ h1 {
         }
 
         /* SKILLS */
-        #skillsSection {
+        .skillsSection {
             .skills {
                 .graphics {
                     right: 20%;
@@ -220,7 +219,7 @@ h1 {
         }
 
         /* EXPERIENCE */
-        #experienceSection {
+        .experienceSection {
             .experience {
                 .text {
                     left: 10%;
@@ -251,7 +250,7 @@ h1 {
         }
 
         /* CONTACT */
-        #contactSection {
+        .contactSection {
             .contact {
                 .text {
                     left: 10%;
@@ -350,16 +349,16 @@ h1 {
         transform: none;
     }
     .mcwrap {
-        #panel {
-            .panel__footer {position: absolute;}
+        .panel {
+            &__footer {position: absolute;}
         }
-        #content {
-            .divider {
+        .content {
+            &__divider {
                 height: 40%;
                 width: 100%;
                 background-color: $background-color;
             }
-            #meSection {
+            .meSection {
                 .me {
                     .text {
                         width: 80%;
@@ -371,7 +370,7 @@ h1 {
                     }
                 }
             }
-            #educationSection {
+            .educationSection {
                 .education {
                     .graphics {
                         height: 30%;
@@ -389,7 +388,7 @@ h1 {
                     }
                 }
             }
-            #skillsSection {
+            .skillsSection {
                 .skills {
                     .text {
                         width: 80%;
@@ -407,7 +406,7 @@ h1 {
                     }
                 }
             }
-            #experienceSection {
+            .experienceSection {
                 .experience {
                     .text {
                         width: 80%;
@@ -419,7 +418,7 @@ h1 {
                     }
                 }
             }
-            #contactSection {
+            .contactSection {
                 .contact {
                     .text {
                         width: 80%;
