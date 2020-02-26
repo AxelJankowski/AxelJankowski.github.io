@@ -281,28 +281,28 @@ h1 {
   .mcwrap {
     display: inline;
   }
-  .mcwrap #panel {
+  .mcwrap .panel {
     width: 100%;
     position: relative;
   }
-  .mcwrap #panel .main {
+  .mcwrap .panel__photo {
     width: 45%;
   }
-  .mcwrap #panel h1 {
+  .mcwrap .panel__name {
     margin-top: 2%;
   }
-  .mcwrap #panel h2 {
+  .mcwrap .panel__title {
     margin-bottom: 4%;
   }
-  .mcwrap #panel h3 {
+  .mcwrap .panel__footer {
     position: fixed;
   }
-  .mcwrap #content {
+  .mcwrap .content {
     width: 100%;
     position: relative;
     margin-left: 0;
   }
-  .mcwrap #content .divider {
+  .mcwrap .content__divider {
     height: 10%;
   }
 }
