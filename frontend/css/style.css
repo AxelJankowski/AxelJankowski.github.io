@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/* Author: Axel Jankowski */
 body, html {
   z-index: -1;
   height: 100%;
@@ -10,10 +10,6 @@ body, html {
   color: #f2f2f2;
 }
 
-.active {
-  color: black !important;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -22,10 +18,10 @@ body, html {
   text-decoration: none;
 }
 
-/* RESPONSYWNOŚĆ, DODAWAJ DO <img> */
-.responsive {
-  max-width: 100%;
-  height: auto;
+.mcwrap {
+  height: 100%;
+  display: flex;
+  position: relative;
 }
 
 .section {
@@ -68,19 +64,19 @@ body, html {
   left: 45%;
 }
 
-h1 {
-  font-size: 40px;
+.active {
+  color: black !important;
 }
 
-/* WRAPPER */
-.mcwrap {
-  height: 100%;
-  display: flex;
-  position: relative;
-  /* PANEL NAWIGACYJNY (LEWY BLOK) */
-  /* ZAWARTOŚĆ (PRAWY BLOK) */
+.responsive {
+  max-width: 100%;
+  height: auto;
 }
-.mcwrap .panel {
+
+/* =======================================================
+Navigation panel (left block).
+======================================================= */
+.panel {
   position: fixed;
   width: 15%;
   height: 100%;
@@ -89,20 +85,20 @@ h1 {
   text-align: center;
   color: #cccccc;
 }
-.mcwrap .panel__photo {
+.panel__photo {
   width: 60%;
   border-radius: 50%;
 }
-.mcwrap .panel__name {
+.panel__name {
   font-size: 28px;
   margin-top: 5%;
 }
-.mcwrap .panel__title {
+.panel__title {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10%;
 }
-.mcwrap .panel__nav {
+.panel__nav {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 600;
@@ -111,14 +107,14 @@ h1 {
   width: auto;
   display: inline-block;
 }
-.mcwrap .panel__nav:hover {
+.panel__nav:hover {
   transform: scale(1.2, 1.2);
   transition-duration: 0.4s;
 }
-.mcwrap .panel__icon {
+.panel__icon {
   font-size: 30px;
 }
-.mcwrap .panel__footer {
+.panel__footer {
   width: 100%;
   font-size: 12px;
   font-weight: 300;
@@ -126,124 +122,124 @@ h1 {
   bottom: 1%;
   text-align: center;
 }
-.mcwrap .panel--link:link {
+.panel--link:link {
   color: #cccccc;
 }
-.mcwrap .panel--link:visited {
+.panel--link:visited {
   color: #cccccc;
 }
-.mcwrap .panel--link-brighten:hover {
+.panel--link-brighten:hover {
   color: #f2f2f2 !important;
   transition-duration: 0.4s;
 }
-.mcwrap .content {
+
+/* =======================================================
+Content (right block).
+======================================================= */
+.content {
   height: 100%;
   width: 100%;
   margin-left: 15%;
   font-size: 16px;
-  /* ODSTĘP POMIĘDZY SEKCJAMI */
-  /* START */
-  /* ME */
-  /* EDUCATION */
-  /* SKILLS */
-  /* EXPERIENCE */
-  /* CONTACT */
 }
-.mcwrap .content__divider {
+.content__divider {
   height: 40%;
   width: 100%;
   background-color: #333333;
 }
-.mcwrap .content .start {
+.content h1 {
+  font-size: 40px;
+}
+.content .start {
   background-image: url(../img/build.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
-.mcwrap .content .start .text {
+.content .start .text {
   position: absolute;
   top: 50%;
   left: 55%;
 }
-.mcwrap .content .start .text h1 {
+.content .start .text h1 {
   color: white;
 }
-.mcwrap .content .meSection .me .text {
+.content .meSection .me .text {
   left: 10%;
   top: 50%;
   width: 30%;
 }
-.mcwrap .content .meSection .me .graphics {
+.content .meSection .me .graphics {
   right: 5%;
   top: 50%;
   width: 50%;
 }
-.mcwrap .content .educationSection .education .graphics {
+.content .educationSection .education .graphics {
   left: 10%;
   top: 50%;
   width: 30%;
 }
-.mcwrap .content .educationSection .education .text {
+.content .educationSection .education .text {
   right: 20%;
   top: 50%;
   width: 30%;
 }
-.mcwrap .content .skillsSection .skills .graphics {
+.content .skillsSection .skills .graphics {
   right: 20%;
   top: 50%;
   width: 25%;
 }
-.mcwrap .content .skillsSection .skills .text {
+.content .skillsSection .skills .text {
   left: 10%;
   top: 50%;
   width: 40%;
 }
-.mcwrap .content .skillsSection .skills .text .tech {
+.content .skillsSection .skills .text .tech {
   width: 100px;
   margin-right: 5%;
   vertical-align: middle;
 }
-.mcwrap .content .experienceSection .experience .text {
+.content .experienceSection .experience .text {
   left: 10%;
   top: 50%;
   width: 30%;
 }
-.mcwrap .content .experienceSection .experience .graphics {
+.content .experienceSection .experience .graphics {
   right: 20%;
   top: 50%;
   width: 30%;
   height: 50%;
 }
-.mcwrap .content .experienceSection .experience .graphics div {
+.content .experienceSection .experience .graphics div {
   width: 100%;
   height: 75%;
 }
-.mcwrap .content .experienceSection .experience .graphics div img {
+.content .experienceSection .experience .graphics div img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.mcwrap .content .experienceSection .experience .graphics div img:hover {
+.content .experienceSection .experience .graphics div img:hover {
   -webkit-filter: brightness(110%);
   filter: brightness(110%);
   transition-duration: 0.4s;
 }
-.mcwrap .content .contactSection .contact .text {
+.content .contactSection .contact .text {
   left: 10%;
   top: 50%;
   width: 35%;
 }
-.mcwrap .content .contactSection .contact .text .contactForm {
+.content .contactSection .contact .text .contactForm {
   padding-top: 5%;
 }
-.mcwrap .content .contactSection .contact .text .contactForm .text h1 {
+.content .contactSection .contact .text .contactForm .text h1 {
   color: #00ffff;
 }
-.mcwrap .content .contactSection .contact .text .contactForm #contactForm input {
+.content .contactSection .contact .text .contactForm #contactForm input {
   height: 40px;
 }
-.mcwrap .content .contactSection .contact .text .contactForm #contactForm .formControl {
+.content .contactSection .contact .text .contactForm #contactForm .formControl {
   width: 100%;
   background: transparent;
   outline: none;
@@ -251,12 +247,12 @@ h1 {
   border-bottom: 2px solid #333333;
   color: #a6a6a6;
 }
-.mcwrap .content .contactSection .contact .text .contactForm #contactForm textarea {
+.content .contactSection .contact .text .contactForm #contactForm textarea {
   height: 100px;
   font-family: "Lato", sans-serif;
   margin-top: 3%;
 }
-.mcwrap .content .contactSection .contact .text .contactForm #contactForm .submit {
+.content .contactSection .contact .text .contactForm #contactForm .submit {
   width: 20%;
   min-width: 80px;
   margin: 10px 0 10px 0;
@@ -265,18 +261,20 @@ h1 {
   letter-spacing: 2px;
   border: 2px solid #333333;
 }
-.mcwrap .content .contactSection .contact .text .contactForm #contactForm .submit:hover {
+.content .contactSection .contact .text .contactForm #contactForm .submit:hover {
   cursor: pointer;
   border: 2px solid #00ffff;
   transition: 2s;
 }
-.mcwrap .content .contactSection .contact .graphics {
+.content .contactSection .contact .graphics {
   right: 20%;
   top: 50%;
   width: 30%;
 }
 
-/* TELEFONY */
+/* =======================================================
+Phones media query.
+======================================================= */
 @media only screen and (max-width: 600px) {
   .mcwrap {
     display: inline;
@@ -306,7 +304,9 @@ h1 {
     height: 10%;
   }
 }
-/* TABLETY */
+/* =======================================================
+Tablets media query.
+======================================================= */
 @media only screen and (max-width: 920px) {
   .container {
     width: 100%;
