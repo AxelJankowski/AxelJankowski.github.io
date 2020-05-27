@@ -221,8 +221,8 @@ Content (right block).
   object-fit: cover;
 }
 .content .experienceSection .experience .graphics div img:hover {
-  -webkit-filter: brightness(110%);
-  filter: brightness(110%);
+  -webkit-filter: brightness(120%);
+  filter: brightness(120%);
   transition-duration: 0.4s;
 }
 .content .contactSection .contact .text {
