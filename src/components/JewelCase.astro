@@ -1,0 +1,110 @@
+---
+interface Props {
+  title: string;
+  spine?: string;
+  href?: string;
+  image?: string;
+  imagePosition?: "center" | "top";
+  imageFit?: "cover" | "contain";
+  coverBackground?: string;
+  logoInvert?: boolean;
+  genre: string;
+  emoji?: string;
+}
+
+const {
+  title,
+  spine = title,
+  href,
+  image,
+  imagePosition = "center",
+  imageFit = "cover",
+  coverBackground,
+  logoInvert = false,
+  genre,
+  emoji = "💿",
+} = Astro.props;
+
+const imageStyle = [
+  imagePosition === "top" ? "object-position: top center" : null,
+  logoInvert ? "filter: invert(1) brightness(1.15)" : null,
+]
+  .filter(Boolean)
+  .join("; ");
+
+const coverStyle = coverBackground ? `background: ${coverBackground}` : undefined;
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="jewel-case"
+      title={`Open ${title}`}
+    >
+      <div class="jewel-case__spine">{spine}</div>
+      <div class="jewel-case__front">
+        <div
+          class:list={[
+            "jewel-case__cover",
+            imageFit === "contain" && "jewel-case__cover--logo",
+          ]}
+          style={coverStyle}
+        >
+          {image ? (
+            <img
+              src={image}
+              alt={title}
+              loading="lazy"
+              class:list={[imageFit === "contain" && "jewel-case__img--contain"]}
+              style={imageStyle || undefined}
+            />
+          ) : (
+            <div class="jewel-case__placeholder" aria-hidden="true">
+              {emoji}
+            </div>
+          )}
+        </div>
+        <div class="jewel-case__shine" />
+        <div class="jewel-case__sticker">
+          {title}
+          <div class="jewel-case__genre">{genre}</div>
+        </div>
+      </div>
+    </a>
+  ) : (
+    <div class="jewel-case jewel-case--static" title={title}>
+      <div class="jewel-case__spine">{spine}</div>
+      <div class="jewel-case__front">
+        <div
+          class:list={[
+            "jewel-case__cover",
+            imageFit === "contain" && "jewel-case__cover--logo",
+          ]}
+          style={coverStyle}
+        >
+          {image ? (
+            <img
+              src={image}
+              alt={title}
+              loading="lazy"
+              class:list={[imageFit === "contain" && "jewel-case__img--contain"]}
+              style={imageStyle || undefined}
+            />
+          ) : (
+            <div class="jewel-case__placeholder" aria-hidden="true">
+              {emoji}
+            </div>
+          )}
+        </div>
+        <div class="jewel-case__shine" />
+        <div class="jewel-case__sticker">
+          {title}
+          <div class="jewel-case__genre">{genre}</div>
+        </div>
+      </div>
+    </div>
+  )
+}

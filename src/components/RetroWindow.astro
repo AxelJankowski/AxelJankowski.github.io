@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  id?: string;
+  new?: boolean;
+}
+
+const { title, id, new: isNew = false } = Astro.props;
+---
+
+<section id={id} class="retro-window bevel-out scroll-mt-4">
+  <div class="title-bar">
+    <span>
+      {title}
+      {isNew && <span class="new-badge">NEW!</span>}
+    </span>
+    <div class="title-bar__buttons" aria-hidden="true">
+      <span class="title-bar__btn">_</span>
+      <span class="title-bar__btn">□</span>
+      <span class="title-bar__btn">×</span>
+    </div>
+  </div>
+  <div class="retro-window__body">
+    <slot />
+  </div>
+</section>

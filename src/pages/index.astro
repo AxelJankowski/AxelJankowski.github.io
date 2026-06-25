@@ -1,0 +1,236 @@
+---
+import Layout from "../layouts/Layout.astro";
+import RetroWindow from "../components/RetroWindow.astro";
+import JewelCase from "../components/JewelCase.astro";
+import SkillGrid from "../components/SkillGrid.astro";
+import { site, projects, linkedInUrl } from "../data/site";
+
+const marqueeText = site.marquee;
+const visitorCount = "000,847";
+const rotations = ["-2deg", "1deg"];
+---
+
+<Layout>
+  <div class="under-construction">
+    <span class="blink">⚠</span> SITE RENOVATION IN PROGRESS — BUT FULLY OPERATIONAL
+    <span class="blink">⚠</span>
+  </div>
+
+  <div class="marquee-wrap" aria-hidden="true">
+    <span class="marquee-track">
+      {marqueeText}{marqueeText}
+    </span>
+  </div>
+
+  <div class="mx-auto max-w-3xl px-3 py-6 space-y-4">
+    <!-- Quick nav -->
+    <nav class="bevel-out p-2 text-center text-sm" aria-label="Site navigation">
+      {
+        site.nav.map((item, i) => (
+          <>
+            <a href={`#${item.id}`} class="font-bold hover:underline">
+              {item.label}
+            </a>
+            {i < site.nav.length - 1 && <span class="text-[#808080]"> | </span>}
+          </>
+        ))
+      }
+    </nav>
+
+    <!-- Welcome -->
+    <RetroWindow title="Welcome!!!" id="welcome">
+      <div class="text-center">
+        <h1
+          class="mb-2 text-2xl font-bold text-[#000080]"
+          style="font-family: var(--font-display)"
+        >
+          {site.name}'s Homepage
+        </h1>
+        <p class="mb-1 text-sm">
+          <span class="blink text-red-600">★</span>
+          <strong>{site.title}</strong>
+          <span class="blink text-red-600">★</span>
+        </p>
+        <p class="mb-4 text-xs italic text-[#333]">{site.tagline}</p>
+
+        <div class="hero-banner bevel-in">
+          <img src="/img/build.jpg" alt="" width="800" height="400" />
+        </div>
+
+        <p class="mb-4 text-sm leading-relaxed">
+          Glad you found this page. Poke around — the guestbook's at the bottom
+          if you feel like saying hi.
+        </p>
+
+        <a href="#about" class="retro-btn">Enter site →</a>
+
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-4">
+          <div>
+            <span class="text-xs">You are visitor #</span>
+            <div class="visitor-counter">{visitorCount}</div>
+          </div>
+          <img
+            src="/img/tea.jpg"
+            alt={site.name}
+            class="bevel-in h-24 w-24 object-cover"
+            style={`transform: rotate(${rotations[0]})`}
+            width="96"
+            height="96"
+          />
+        </div>
+      </div>
+    </RetroWindow>
+
+    <!-- About -->
+    <RetroWindow title="About Me" id="about">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-start">
+        <img
+          src="/img/beach.jpg"
+          alt="Axel at the beach"
+          class="bevel-in mx-auto w-full max-w-[200px] object-cover sm:mx-0"
+          width="200"
+          height="200"
+          loading="lazy"
+        />
+        <div class="text-sm leading-relaxed">
+          <p class="mb-3">
+            <strong>Hello, I'm Axel.</strong> I'm a software engineer. I make apps
+            and noise.
+          </p>
+        </div>
+      </div>
+    </RetroWindow>
+
+    <!-- Education -->
+    <RetroWindow title="Alma Mater" id="education">
+      <div class="flex flex-col gap-4 sm:flex-row">
+        <img
+          src="/img/student.jpg"
+          alt="Student days"
+          class="bevel-in mx-auto w-full max-w-[180px] object-cover"
+          width="180"
+          height="180"
+          loading="lazy"
+        />
+        <div class="text-sm leading-relaxed">
+          <p class="mb-3">
+            🎓 Bachelor of <strong>Computer Science</strong>
+            <br />
+            <em>specialisation: computer graphics & multimedia</em>
+          </p>
+          <p class="mb-3">
+            🏫 <strong>Wyższa Szkoła Bankowa</strong>
+          </p>
+          <img
+            src="/img/gala.jpg"
+            alt="Graduation gala"
+            class="bevel-in w-full object-cover"
+            width="400"
+            height="220"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </RetroWindow>
+
+    <!-- Skills -->
+    <RetroWindow title="My Toolkit" id="skills">
+      <p class="mb-3 text-sm">
+        Things I work with day to day (per my{" "}
+        <a
+          href={linkedInUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        ):
+      </p>
+      <SkillGrid />
+    </RetroWindow>
+
+    <!-- Side projects -->
+    <RetroWindow title="Side Projects" id="projects">
+      <p class="mb-4 text-sm">
+        Personal stuff I built on the side — click a case to open it, where there's
+        a link. 💿
+      </p>
+      <div class="flex flex-wrap justify-center gap-8 py-4">
+        {
+          projects.map((project) => (
+            <JewelCase
+              title={project.title}
+              spine={"spine" in project ? project.spine : undefined}
+              href={project.href}
+              image={project.image}
+              imagePosition={"imagePosition" in project ? project.imagePosition : undefined}
+              imageFit={"imageFit" in project ? project.imageFit : undefined}
+              coverBackground={"coverBackground" in project ? project.coverBackground : undefined}
+              logoInvert={"logoInvert" in project ? project.logoInvert : undefined}
+              genre={project.genre}
+              emoji={project.emoji}
+            />
+          ))
+        }
+      </div>
+    </RetroWindow>
+
+    <!-- Guestbook / Contact -->
+    <RetroWindow title="Sign My Guestbook!" id="contact">
+      <div class="text-sm">
+        <p class="mb-4">
+          Say hi, ask a question, or tell me my site looks like 1999.
+        </p>
+
+        <div class="bevel-in mb-4 p-4 text-center">
+          <p class="mb-2 text-xs text-[#666]">✉️ email me at:</p>
+          <a
+            href={`mailto:${site.email}`}
+            class="text-lg font-bold"
+            style="font-family: var(--font-display)"
+          >
+            {site.email}
+          </a>
+        </div>
+
+        <p class="mb-2 font-bold text-[#000080]">Find me elsewhere on the web:</p>
+        <ul class="space-y-1 pl-4">
+          {
+            site.social.map((link) => (
+              <li>
+                →
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-bold"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </RetroWindow>
+
+    <!-- Footer -->
+    <footer class="bevel-in p-4 text-center text-xs leading-relaxed text-[#333]">
+      <p class="mb-2">
+        <span class="blink">🚧</span>
+        <strong>Best viewed at 800×600</strong>
+        <span class="blink">🚧</span>
+      </p>
+      <p class="mb-2">Made with ❤️ and Notepad (trust me)</p>
+      <p class="mb-2">
+        Last updated: {new Date().toLocaleDateString("en-GB", { month: "long", year: "numeric" })}
+      </p>
+      <p>
+        © {new Date().getFullYear()} {site.name} — No rights reserved, do whatever
+      </p>
+      <p class="mt-3 text-[10px] text-[#999]">
+        No cookies. No tracking. Just vibes.
+      </p>
+    </footer>
+  </div>
+</Layout>
