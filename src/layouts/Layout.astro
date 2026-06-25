@@ -5,12 +5,26 @@ import { site } from "../data/site";
 interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
 }
 
 const {
   title = `${site.pageTitle} ★ ${site.title}`,
   description = site.description,
+  canonical = `${site.url}/`,
 } = Astro.props;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  url: site.url,
+  email: site.email,
+  jobTitle: site.title,
+  description: site.description,
+  image: `${site.url}/img/tea.jpg`,
+  sameAs: site.social.map((link) => link.href),
+};
 ---
 
 <!doctype html>
@@ -28,8 +42,9 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={site.url} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:image" content={`${site.url}/img/build.jpg`} />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,6 +52,7 @@ const {
       href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     <title>{title}</title>
   </head>
   <body>

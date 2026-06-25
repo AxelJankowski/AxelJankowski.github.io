@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://axeljankowski.github.io/sitemap.xml

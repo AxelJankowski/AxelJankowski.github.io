@@ -8,7 +8,7 @@ export const site = {
   url: "https://axeljankowski.github.io",
   pageTitle: "Axel Jankowski's Homepage",
   description:
-    "Welcome to Axel Jankowski's personal homepage — software engineer, guitarist, and cinema enthusiast.",
+    "Axel Jankowski — software engineer. I build web apps, wrangle APIs, and make things and noise. Side projects, toolkit, and guestbook on my personal homepage.",
   marquee:
     "hey you found my site • still under construction (probably forever) • software engineer • guitar in local band • hit counter 100% legit • films & loud music • netscape recommended • guestbook is down there somewhere • saving Tyria • best on a CRT • amateur pyrotechnician • ",
   social: [
