@@ -1,0 +1,137 @@
+---
+import { site, guestbook } from "../data/site";
+
+const hasForm = Boolean(site.formspreeFormId);
+---
+
+<div class="guestbook">
+  <div id="guestbook-success" class="guestbook__success bevel-in" hidden>
+    <p class="font-bold text-[#000080]">Thanks for signing!</p>
+    <p class="mt-1 text-xs">Your entry was sent. I&apos;ll read it eventually.</p>
+  </div>
+
+  <div id="guestbook-error" class="guestbook__error bevel-in" hidden>
+    <p class="font-bold text-red-700">Something broke.</p>
+    <p class="mt-1 text-xs">Try again or email me directly below.</p>
+  </div>
+
+  {
+    hasForm ? (
+      <form
+        id="guestbook-form"
+        class="guestbook__form bevel-in"
+        action={`https://formspree.io/f/${site.formspreeFormId}`}
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="Guestbook entry — Axel's Homepage" />
+
+        <label class="guestbook__label">
+          <span class="guestbook__label-text">Your name</span>
+          <input
+            class="guestbook__input"
+            type="text"
+            name="name"
+            required
+            maxlength="80"
+            autocomplete="name"
+            placeholder="Anonymous coward"
+          />
+        </label>
+
+        <label class="guestbook__label">
+          <span class="guestbook__label-text">Email (optional)</span>
+          <input
+            class="guestbook__input"
+            type="email"
+            name="email"
+            maxlength="120"
+            autocomplete="email"
+            placeholder="so I can write back"
+          />
+        </label>
+
+        <label class="guestbook__label">
+          <span class="guestbook__label-text">Message</span>
+          <textarea
+            class="guestbook__input guestbook__textarea"
+            name="message"
+            required
+            maxlength="1000"
+            rows="4"
+            placeholder={guestbook.messagePlaceholder}
+          />
+        </label>
+
+        <input
+          class="guestbook__honeypot"
+          type="text"
+          name="_gotcha"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        />
+
+        <button type="submit" class="retro-btn guestbook__submit">
+          Sign guestbook →
+        </button>
+      </form>
+    ) : (
+      <p class="guestbook__setup bevel-in text-xs text-[#666]">
+        Guestbook form not wired up yet — add your Formspree form ID in{" "}
+        <code>src/data/site.ts</code>.
+      </p>
+    )
+  }
+
+  <p class="guestbook__or text-center text-xs text-[#666]">— or —</p>
+
+  <div class="bevel-in p-4 text-center">
+    <p class="mb-2 text-xs text-[#666]">✉️ email me at:</p>
+    <a
+      href={`mailto:${site.email}`}
+      class="text-lg font-bold"
+      style="font-family: var(--font-display)"
+    >
+      {site.email}
+    </a>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById("guestbook-form");
+  const success = document.getElementById("guestbook-success");
+  const error = document.getElementById("guestbook-error");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const button = form.querySelector('button[type="submit"]');
+    if (!(button instanceof HTMLButtonElement)) return;
+
+    button.disabled = true;
+    button.textContent = "Sending…";
+    error?.setAttribute("hidden", "");
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) {
+        throw new Error("Formspree request failed");
+      }
+
+      form.reset();
+      form.setAttribute("hidden", "");
+      success?.removeAttribute("hidden");
+      success?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    } catch {
+      error?.removeAttribute("hidden");
+    } finally {
+      button.disabled = false;
+      button.textContent = "Sign guestbook →";
+    }
+  });
+</script>

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import RetroWindow from "../components/RetroWindow.astro";
 import JewelCase from "../components/JewelCase.astro";
 import SkillGrid from "../components/SkillGrid.astro";
+import GuestbookForm from "../components/GuestbookForm.astro";
 import { site, projects, linkedInUrl, about } from "../data/site";
 
 const marqueeText = site.marquee;
@@ -179,22 +180,9 @@ const rotations = ["-2deg", "1deg"];
     <!-- Guestbook / Contact -->
     <RetroWindow title="Sign My Guestbook!" id="contact">
       <div class="text-sm">
-        <p class="mb-4">
-          Say hi, ask a question, or tell me my site looks like 1999.
-        </p>
+        <GuestbookForm />
 
-        <div class="bevel-in mb-4 p-4 text-center">
-          <p class="mb-2 text-xs text-[#666]">✉️ email me at:</p>
-          <a
-            href={`mailto:${site.email}`}
-            class="text-lg font-bold"
-            style="font-family: var(--font-display)"
-          >
-            {site.email}
-          </a>
-        </div>
-
-        <p class="mb-2 font-bold text-[#000080]">Find me elsewhere on the web:</p>
+        <p class="mb-2 mt-4 font-bold text-[#000080]">Find me elsewhere on the web:</p>
         <ul class="space-y-1 pl-4">
           {
             site.social.map((link) => (

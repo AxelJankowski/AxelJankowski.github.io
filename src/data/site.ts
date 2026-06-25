@@ -5,6 +5,8 @@ export const site = {
   title: "Software Engineer",
   tagline: "I write software & build things",
   email: "axeljankowskii@gmail.com",
+  /** Formspree form ID — free account at https://formspree.io → New Form → copy ID from form URL */
+  formspreeFormId: "xykqeoag",
   url: "https://axeljankowski.github.io",
   pageTitle: "Axel Jankowski's Homepage",
   description:
@@ -34,6 +36,11 @@ export const site = {
 export const about = {
   intro: "Hello, I'm Axel. I'm a software engineer. I make things and noise.",
   body: "I build web apps, wrangle APIs, and politely argue with cloud providers. My local setup is held together with hope and Docker.",
+} as const;
+
+export const guestbook = {
+  messagePlaceholder:
+    "Say hi, ask a question, roast my site, or tell me Eraserhead changed your life.",
 } as const;
 
 /** Skills from LinkedIn / work. All icons are SVG (Devicon). */
