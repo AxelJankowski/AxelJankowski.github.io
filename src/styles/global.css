@@ -239,6 +239,16 @@
     box-shadow: inset -2px 0 4px #fff8, inset 2px 0 4px #0003;
   }
 
+  .jewel-case__new-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 2;
+    margin: 0;
+    vertical-align: baseline;
+    box-shadow: 1px 1px 0 #000;
+  }
+
   .jewel-case__cover {
     position: absolute;
     inset: 0;

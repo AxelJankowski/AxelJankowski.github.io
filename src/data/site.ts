@@ -31,6 +31,11 @@ export const site = {
   ],
 } as const;
 
+export const about = {
+  intro: "Hello, I'm Axel. I'm a software engineer. I make things and noise.",
+  body: "I build web apps, wrangle APIs, and politely argue with cloud providers. My local setup is held together with hope and Docker.",
+} as const;
+
 /** Skills from LinkedIn / work. All icons are SVG (Devicon). */
 export const skills = [
   { name: "JavaScript", icon: "/img/tech/javascript.svg" },
@@ -91,5 +96,6 @@ export const projects = [
     logoInvert: true,
     genre: "Car Alerts · AI",
     emoji: "🚗",
+    isNew: true,
   },
 ] as const;

@@ -10,6 +10,7 @@ interface Props {
   logoInvert?: boolean;
   genre: string;
   emoji?: string;
+  new?: boolean;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   logoInvert = false,
   genre,
   emoji = "💿",
+  new: isNew = false,
 } = Astro.props;
 
 const imageStyle = [
@@ -46,6 +48,7 @@ const coverStyle = coverBackground ? `background: ${coverBackground}` : undefine
     >
       <div class="jewel-case__spine">{spine}</div>
       <div class="jewel-case__front">
+        {isNew && <span class="jewel-case__new-badge new-badge">NEW!</span>}
         <div
           class:list={[
             "jewel-case__cover",
@@ -78,6 +81,7 @@ const coverStyle = coverBackground ? `background: ${coverBackground}` : undefine
     <div class="jewel-case jewel-case--static" title={title}>
       <div class="jewel-case__spine">{spine}</div>
       <div class="jewel-case__front">
+        {isNew && <span class="jewel-case__new-badge new-badge">NEW!</span>}
         <div
           class:list={[
             "jewel-case__cover",

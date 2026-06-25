@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import RetroWindow from "../components/RetroWindow.astro";
 import JewelCase from "../components/JewelCase.astro";
 import SkillGrid from "../components/SkillGrid.astro";
-import { site, projects, linkedInUrl } from "../data/site";
+import { site, projects, linkedInUrl, about } from "../data/site";
 
 const marqueeText = site.marquee;
 const visitorCount = "000,847";
@@ -94,9 +94,9 @@ const rotations = ["-2deg", "1deg"];
         />
         <div class="text-sm leading-relaxed">
           <p class="mb-3">
-            <strong>Hello, I'm Axel.</strong> I'm a software engineer. I make apps
-            and noise.
+            <strong>{about.intro}</strong>
           </p>
+          <p>{about.body}</p>
         </div>
       </div>
     </RetroWindow>
@@ -169,6 +169,7 @@ const rotations = ["-2deg", "1deg"];
               logoInvert={"logoInvert" in project ? project.logoInvert : undefined}
               genre={project.genre}
               emoji={project.emoji}
+              new={"isNew" in project ? project.isNew : undefined}
             />
           ))
         }
