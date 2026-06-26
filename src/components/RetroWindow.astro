@@ -15,9 +15,9 @@ const { title, id, new: isNew = false } = Astro.props;
       {isNew && <span class="new-badge">NEW!</span>}
     </span>
     <div class="title-bar__buttons" aria-hidden="true">
-      <span class="title-bar__btn">_</span>
-      <span class="title-bar__btn">□</span>
-      <span class="title-bar__btn">×</span>
+      <span class="title-bar__btn title-bar__btn--min" title="Minimize">_</span>
+      <span class="title-bar__btn title-bar__btn--max" title="Maximize">□</span>
+      <span class="title-bar__btn title-bar__btn--close" title="Close">×</span>
     </div>
   </div>
   <div class="retro-window__body">

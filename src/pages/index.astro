@@ -55,7 +55,11 @@ const rotations = ["-2deg", "1deg"];
         <p class="mb-4 text-xs italic text-[#333]">{site.tagline}</p>
 
         <div class="hero-banner bevel-in">
-          <img src="/img/build.jpg" alt="" width="800" height="400" />
+          <div class="hero-banner__frame">
+            <img src="/img/build.jpg" alt="" width="800" height="400" />
+            <div class="hero-banner__scanlines" aria-hidden="true"></div>
+            <div class="hero-banner__vignette" aria-hidden="true"></div>
+          </div>
         </div>
 
         <p class="mb-4 text-sm leading-relaxed">

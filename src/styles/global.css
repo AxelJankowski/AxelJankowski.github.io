@@ -23,17 +23,73 @@
     font-family: var(--font-retro);
     font-size: 14px;
     color: #000;
-    background-color: var(--color-win-bg);
-    background-image:
-      radial-gradient(1px 1px at 20px 30px, #fff, transparent),
-      radial-gradient(1px 1px at 80px 120px, #fff8, transparent),
-      radial-gradient(1px 1px at 160px 60px, #fff, transparent),
-      radial-gradient(1px 1px at 240px 180px, #fff6, transparent),
-      radial-gradient(1px 1px at 320px 40px, #fff, transparent),
-      radial-gradient(1px 1px at 400px 140px, #fff8, transparent),
-      linear-gradient(180deg, var(--color-star-2), var(--color-star-1));
-    background-size: 420px 200px, 420px 200px, 420px 200px, 420px 200px, 420px 200px, 420px 200px, 100% 100%;
+    background-color: #020218;
+    background-image: linear-gradient(
+      180deg,
+      #000044 0%,
+      var(--color-star-2) 38%,
+      var(--color-star-1) 100%
+    );
     min-height: 100vh;
+  }
+
+  .site-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .starfield {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .starfield__layer {
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background-repeat: repeat;
+    will-change: transform, opacity;
+  }
+
+  .starfield__layer--far {
+    background-image:
+      radial-gradient(1px 1px at 10px 15px, rgba(255, 255, 255, 0.55), transparent),
+      radial-gradient(1px 1px at 55px 80px, rgba(255, 255, 255, 0.35), transparent),
+      radial-gradient(1px 1px at 120px 40px, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(1px 1px at 180px 130px, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(1px 1px at 240px 70px, rgba(255, 255, 255, 0.45), transparent),
+      radial-gradient(1.5px 1.5px at 300px 20px, rgba(200, 220, 255, 0.65), transparent),
+      radial-gradient(1px 1px at 360px 110px, rgba(255, 255, 255, 0.4), transparent);
+    background-size: 380px 280px;
+    animation: starfield-drift 180s linear infinite, starfield-twinkle 5s ease-in-out infinite;
+  }
+
+  .starfield__layer--mid {
+    background-image:
+      radial-gradient(1.5px 1.5px at 30px 50px, rgba(255, 255, 255, 0.75), transparent),
+      radial-gradient(1px 1px at 90px 140px, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(2px 2px at 150px 90px, rgba(255, 248, 220, 0.85), transparent),
+      radial-gradient(1px 1px at 210px 30px, rgba(255, 255, 255, 0.55), transparent),
+      radial-gradient(1.5px 1.5px at 270px 160px, rgba(220, 235, 255, 0.7), transparent),
+      radial-gradient(1px 1px at 330px 100px, rgba(255, 255, 255, 0.45), transparent);
+    background-size: 420px 320px;
+    animation: starfield-drift 120s linear infinite reverse, starfield-twinkle 3.5s ease-in-out infinite alternate;
+  }
+
+  .starfield__layer--near {
+    background-image:
+      radial-gradient(2px 2px at 40px 60px, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 110px 25px, rgba(255, 255, 255, 0.9), transparent),
+      radial-gradient(2.5px 2.5px at 175px 145px, rgba(255, 252, 230, 0.95), transparent),
+      radial-gradient(1.5px 1.5px at 250px 85px, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(2px 2px at 320px 40px, rgba(230, 240, 255, 0.9), transparent),
+      radial-gradient(1px 1px at 390px 120px, rgba(255, 255, 255, 0.7), transparent);
+    background-size: 480px 360px;
+    animation: starfield-drift 90s linear infinite, starfield-twinkle 2.8s ease-in-out infinite alternate-reverse;
   }
 
   a {
@@ -81,10 +137,13 @@
   }
 
   .title-bar__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 16px;
     height: 14px;
     font-size: 9px;
-    line-height: 12px;
+    line-height: 1;
     text-align: center;
     background: var(--color-win-gray);
     color: #000;
@@ -92,6 +151,44 @@
     border-color: var(--color-win-light) var(--color-win-dark) var(--color-win-dark) var(--color-win-light);
     font-family: var(--font-retro);
     font-weight: bold;
+    cursor: default;
+    user-select: none;
+  }
+
+  .title-bar__btn--min {
+    font-size: 10px;
+    padding-bottom: 3px;
+  }
+
+  .title-bar__btn--max {
+    font-size: 8px;
+  }
+
+  .title-bar__btn--close {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .title-bar__btn:hover {
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .title-bar__btn--close:hover {
+    background: #ff0000;
+    color: #fff;
+    border-color: #fff #808080 #808080 #fff;
+  }
+
+  .title-bar__btn:active {
+    border-color: var(--color-win-dark) var(--color-win-light) var(--color-win-light) var(--color-win-dark);
+    background: #b0b0b0;
+  }
+
+  .title-bar__btn--close:active {
+    background: #cc0000;
+    color: #fff;
+    border-color: #808080 #fff #fff #808080;
   }
 
   .retro-window {
@@ -128,7 +225,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     .blink,
-    .marquee-track {
+    .marquee-track,
+    .starfield__layer {
       animation: none;
     }
   }
@@ -326,19 +424,75 @@
   }
 
   .hero-banner {
-    display: flex;
-    justify-content: center;
     margin: 0 auto 1rem;
     max-width: 100%;
+    padding: 10px;
+    background: linear-gradient(180deg, #2a2a2a 0%, #111 100%);
+    box-shadow:
+      inset 0 1px 0 #555,
+      inset 0 -1px 0 #000;
+  }
+
+  .hero-banner__frame {
+    position: relative;
+    overflow: hidden;
     background: #000;
+    border: 2px solid #000;
+    box-shadow:
+      inset 0 0 0 1px #444,
+      0 0 12px rgba(0, 0, 0, 0.35);
+  }
+
+  .hero-banner__frame::before,
+  .hero-banner__frame::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: #000;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.85;
+  }
+
+  .hero-banner__frame::before {
+    top: 0;
+  }
+
+  .hero-banner__frame::after {
+    bottom: 0;
   }
 
   .hero-banner img {
     display: block;
+    width: 100%;
     max-height: 11rem;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
+    filter: contrast(1.05) saturate(0.92);
+  }
+
+  .hero-banner__scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0) 2px,
+      rgba(0, 0, 0, 0.14) 2px,
+      rgba(0, 0, 0, 0.14) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-banner__vignette {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 28px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 1;
   }
 
   .new-badge {
@@ -445,5 +599,24 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes starfield-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-8%, -6%, 0);
+  }
+}
+
+@keyframes starfield-twinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
   }
 }

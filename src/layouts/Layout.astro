@@ -56,6 +56,13 @@ const personSchema = {
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <div class="starfield" aria-hidden="true">
+      <div class="starfield__layer starfield__layer--far"></div>
+      <div class="starfield__layer starfield__layer--mid"></div>
+      <div class="starfield__layer starfield__layer--near"></div>
+    </div>
+    <div class="site-content">
+      <slot />
+    </div>
   </body>
 </html>
