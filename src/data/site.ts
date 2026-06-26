@@ -28,7 +28,7 @@ export const site = {
     { id: "about", label: "About Me" },
     { id: "education", label: "Alma Mater" },
     { id: "skills", label: "My Toolkit" },
-    { id: "projects", label: "My Projects" },
+    { id: "projects", label: "Side Projects" },
     { id: "contact", label: "Guestbook" },
   ],
 } as const;
@@ -48,12 +48,13 @@ export const skills = [
   { name: "JavaScript", icon: "/img/tech/javascript.svg" },
   { name: "PHP", icon: "/img/tech/php.svg" },
   { name: "Node", icon: "/img/tech/nodejs.svg" },
-  { name: "React", icon: "/img/tech/react.svg" },
   { name: "Vue", icon: "/img/tech/vue.svg" },
+  { name: "Astro", icon: "/img/tech/astro.svg" },
   { name: "Laravel", icon: "/img/tech/laravel.svg" },
   { name: "Flutter", icon: "/img/tech/flutter.svg" },
   { name: "PostgreSQL", icon: "/img/tech/postgresql.svg" },
   { name: "MySQL", icon: "/img/tech/mysql.svg" },
+  { name: "MongoDB", icon: "/img/tech/mongodb.svg" },
   { name: "Redis", icon: "/img/tech/redis.svg" },
   { name: "Docker", icon: "/img/tech/docker.svg" },
   { name: "Google Cloud", icon: "/img/tech/googlecloud.svg" },
@@ -61,9 +62,6 @@ export const skills = [
   { name: "Firebase", icon: "/img/tech/firebase.svg" },
   { name: "Tailwind", icon: "/img/tech/tailwind.svg" },
   { name: "WordPress", icon: "/img/tech/wordpress.svg" },
-  { name: "HTML", icon: "/img/tech/html.svg" },
-  { name: "CSS", icon: "/img/tech/css.svg" },
-  { name: "Sass", icon: "/img/tech/sass.svg" },
   { name: "Git", icon: "/img/tech/git.svg" },
 ] as const;
 
