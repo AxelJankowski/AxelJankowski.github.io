@@ -285,7 +285,7 @@
     margin: 0;
     padding: 6px 10px;
     background: #ffcc00;
-    color: #000;
+    color: #cc0000;
     font-weight: bold;
     font-size: 12px;
     line-height: 1.35;
@@ -454,6 +454,14 @@
     border: none;
     background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
     margin: 12px 0;
+  }
+
+  .flame-divider {
+    height: 28px;
+    margin: 6px 0;
+    background: #000 url("/img/burning-flame.gif") repeat-x center bottom / auto 100%;
+    border: 2px solid;
+    border-color: var(--color-win-dark) var(--color-win-light) var(--color-win-light) var(--color-win-dark);
   }
 
   .jewel-case--static {

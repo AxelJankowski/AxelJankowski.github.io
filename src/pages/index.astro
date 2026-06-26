@@ -4,6 +4,7 @@ import RetroWindow from "../components/RetroWindow.astro";
 import JewelCase from "../components/JewelCase.astro";
 import SkillGrid from "../components/SkillGrid.astro";
 import GuestbookForm from "../components/GuestbookForm.astro";
+import FlameDivider from "../components/FlameDivider.astro";
 import { site, projects, linkedInUrl, about } from "../data/site";
 
 const marqueeText = site.marquee;
@@ -85,6 +86,7 @@ const rotations = ["-2deg", "1deg"];
         </div>
       </div>
     </RetroWindow>
+    <FlameDivider />
 
     <!-- About -->
     <RetroWindow title="About Me" id="about">
@@ -105,6 +107,7 @@ const rotations = ["-2deg", "1deg"];
         </div>
       </div>
     </RetroWindow>
+    <FlameDivider />
 
     <!-- Education -->
     <RetroWindow title="Alma Mater" id="education">
@@ -137,6 +140,7 @@ const rotations = ["-2deg", "1deg"];
         </div>
       </div>
     </RetroWindow>
+    <FlameDivider />
 
     <!-- Skills -->
     <RetroWindow title="My Toolkit" id="skills">
@@ -153,6 +157,7 @@ const rotations = ["-2deg", "1deg"];
       </p>
       <SkillGrid />
     </RetroWindow>
+    <FlameDivider />
 
     <!-- Side projects -->
     <RetroWindow title="Side Projects" id="projects">
@@ -180,6 +185,7 @@ const rotations = ["-2deg", "1deg"];
         }
       </div>
     </RetroWindow>
+    <FlameDivider />
 
     <!-- Guestbook / Contact -->
     <RetroWindow title="Sign My Guestbook!" id="contact">
