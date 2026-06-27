@@ -94,11 +94,7 @@ export const projects = [
   {
     title: "Hunto",
     href: "https://hunto.it",
-    image: "/img/hunto-logo.svg",
-    imageFit: "contain",
-    coverBackground:
-      "linear-gradient(155deg, #09090b 0%, #1e1b4b 42%, #312e81 78%, #4338ca 100%)",
-    logoInvert: true,
+    image: "/img/hunto.png",
     genre: "Car Alerts · AI",
     emoji: "🚗",
     isNew: true,
